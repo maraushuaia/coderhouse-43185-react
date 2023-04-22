@@ -78,17 +78,17 @@ const NavbarPrimaryApp = () => {
             </IconButton>
           </Box>
 
-          {/* Aca se renderiza EL LOGO, Menu*/}
+          {/* Aca se renderiza el LOGO y las opciones del MENU*/}
           <Logo />
           <OptionMenu />
 
           <Box sx={{flexGrow: 1}} />
           <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
-            {/* Aca se renderiza el CAMPO de Busqueda, Notificaciones, CartWidget, User*/}
-            <SearchView></SearchView>
-            <NotificationView></NotificationView>
-            <CartView></CartView>
-            <UserView></UserView>
+            {/* Aca se renderiza el la Busqueda, Notificaciones, CartWidget, User*/}
+            <SearchView />
+            <NotificationView />
+            <CartView />
+            <UserView />
           </Box>
 
           <Box sx={{display: {xs: 'flex', md: 'none'}}}>
