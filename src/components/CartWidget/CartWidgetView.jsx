@@ -1,3 +1,6 @@
+/***/
+/* Este componente se invoca unicamente desde el Navbar*/
+/***/
 import React from 'react';
 import {Badge, IconButton} from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
