@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import NavbarPrimaryApp from './components/Navbar/Navbar';
+import ItemListContainerView from './components/ItemListContainer/ItemListContainerView';
+import {Box, Container} from '@mui/material';
+import EcommerceCard from './components/Card/CardView';
+import BarMobile from './components/Navbar/BarMobile';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <NavbarPrimaryApp />
+      <Container maxWidth='xl'>
+        <ItemListContainerView greeting={'Bienvenidos:'} />
+        <EcommerceCard />
+      </Container>
+      {/* <BarMobile /> */}
+    </Box>
   );
 }
 
