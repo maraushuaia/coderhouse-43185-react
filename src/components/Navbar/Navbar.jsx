@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import OptionMenu from './OptionMenu';
 import SearchView from '../Search/SearchView';
@@ -13,6 +12,7 @@ import NotificationView from '../Notification/NotificationView';
 import CartView from '../CartWidget/CartWidgetView';
 import Logo from './Logo';
 import UserView from '../User/UserView';
+import MenuDrawer from './MenuDrawer';
 
 const NavbarPrimaryApp = () => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -66,17 +66,7 @@ const NavbarPrimaryApp = () => {
       <AppBar color='secondary'>
         <Toolbar>
           {/* Aca se renderiza MENU DRAWER*/}
-          <Box sx={{display: {xs: 'flex', sm: 'flex', md: 'flex', lg: 'none'}}}>
-            <IconButton
-              size='large'
-              edge='start'
-              color='inherit'
-              aria-label='open drawer'
-              sx={{mr: 1}}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
+          <MenuDrawer />
 
           {/* Aca se renderiza el LOGO y las opciones del MENU*/}
           <Logo />
