@@ -18,7 +18,7 @@ const BarMobile = () => {
 
   return (
     <Box sx={{display: {xs: 'flex', sm: 'none', md: 'none', lg: 'none'}}}>
-      <BottomAppBar position='fixed' color='primary'>
+      <BottomAppBar position='fixed'>
         <BottomNavigation
           showLabels
           value={value}
