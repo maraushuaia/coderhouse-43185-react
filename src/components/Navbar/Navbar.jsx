@@ -73,25 +73,23 @@ const NavbarPrimaryApp = () => {
           <OptionMenu />
 
           <Box sx={{flexGrow: 1}} />
-          <Box sx={{display: {xs: 'none', md: 'flex'}, alignItems: 'center'}}>
+          <Box
+            sx={{
+              display: {xs: 'none', sm: 'flex', md: 'flex'},
+              alignItems: 'center',
+            }}
+          >
             {/* Aca se renderiza el la Busqueda, Notificaciones, CartWidget, User*/}
-            <SearchView />
+            <Box
+              sx={{
+                display: {xs: 'none', sm: 'none', md: 'flex'},
+              }}
+            >
+              <SearchView />
+            </Box>
             <NotificationView />
             <CartView />
             <UserView />
-          </Box>
-
-          <Box sx={{display: {xs: 'flex', md: 'none'}}}>
-            <IconButton
-              size='large'
-              aria-label='show more'
-              aria-controls={mobileMenuId}
-              aria-haspopup='true'
-              onClick={handleMobileMenuOpen}
-              color='inherit'
-            >
-              <MoreIcon />
-            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
