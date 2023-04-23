@@ -1,38 +1,39 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import {AccountCircle} from '@mui/icons-material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {styled} from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
 
 const BarMobile = () => {
+  const [value, setValue] = React.useState(0);
+
+  const BottomAppBar = styled(AppBar)({
+    top: 'auto',
+    bottom: 0,
+  });
+
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        zIndex: 1,
-        display: {xs: 'block', sm: 'none', md: 'none', lg: 'none', xl: 'none'},
-      }}
-    >
-      <AppBar>
-        <Toolbar variant='dense'>
-          <IconButton
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            sx={{mr: 2}}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' color='inherit' component='div'>
-            Photos
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <Box sx={{display: {xs: 'flex', sm: 'none', md: 'none', lg: 'none'}}}>
+      <BottomAppBar position='fixed' color='primary'>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <BottomNavigationAction
+            label='Alertas'
+            icon={<NotificationsIcon />}
+          />
+          <BottomNavigationAction label='Carrito' icon={<ShoppingCartIcon />} />
+          <BottomNavigationAction label='Mi Cuenta' icon={<AccountCircle />} />
+        </BottomNavigation>
+      </BottomAppBar>
     </Box>
   );
 };

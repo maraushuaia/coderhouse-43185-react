@@ -13,10 +13,10 @@ function App() {
     <Box>
       <NavbarPrimaryApp />
       <Container maxWidth='xl'>
-        <ItemListContainerView greeting={'Bienvenidos:'} />
+        <ItemListContainerView greeting={'Bienvenidos al GREETING'} />
         <EcommerceCard />
       </Container>
-      {/* <BarMobile /> */}
+      <BarMobile />
     </Box>
   );
 }
