@@ -6,11 +6,16 @@ import {Badge, IconButton} from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartView = ({color}) => {
-  console.log("Contenido de color: =>",color)
+  console.log('Contenido de color: =>', color);
   return (
-      <IconButton size='large' aria-label='show shopping' color={color}>
+    <IconButton
+      size='large'
+      aria-label='show shopping'
+      color={color}
+      sx={{pt: 1, pb: 0}}
+    >
       <Badge badgeContent={3} color='info'>
-        <ShoppingCartIcon />
+        <ShoppingCartIcon sx={{pb: 0}} />
       </Badge>
     </IconButton>
   );

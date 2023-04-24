@@ -28,14 +28,21 @@ const BarMobile = () => {
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
+          sx={{pt: 1}}
         >
           <BottomNavigationAction
             label='Alertas'
-            icon={<NotificationView color='secondary'/>}
+            icon={<NotificationView color='secondary' />}
           />
-          <BottomNavigationAction label='Carrito' icon={<CartView color='secondary'/>} />
-          <BottomNavigationAction label='Mi Cuenta' icon={<UserView color='secondary'/>} />
-          </BottomNavigation>
+          <BottomNavigationAction
+            label='Carrito'
+            icon={<CartView color='secondary' />}
+          />
+          <BottomNavigationAction
+            label='Mi Cuenta'
+            icon={<UserView color='secondary' />}
+          />
+        </BottomNavigation>
       </BottomAppBar>
     </Box>
   );

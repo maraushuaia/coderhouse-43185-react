@@ -8,9 +8,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const NotificationView = ({color}) => {
   return (
-    <IconButton size='large' aria-label='notification' color={color}>
+    <IconButton
+      size='large'
+      aria-label='notification'
+      color={color}
+      sx={{pt: 1, pb: 0}}
+    >
       <Badge badgeContent={1} color='info'>
-        <NotificationsIcon />
+        <NotificationsIcon sx={{pb: 0}} />
       </Badge>
     </IconButton>
   );

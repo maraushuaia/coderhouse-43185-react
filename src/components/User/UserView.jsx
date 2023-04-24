@@ -54,8 +54,9 @@ const UserView = ({color}) => {
         aria-haspopup='true'
         onClick={handleProfileMenuOpen}
         color={color}
+        sx={{pt: 1, pb: 0}}
       >
-        <AccountCircle />
+        <AccountCircle sx={{pb: 0}} />
       </IconButton>
       {renderMenu}
     </Box>
