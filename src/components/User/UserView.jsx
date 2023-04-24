@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Box, IconButton, Menu, MenuItem} from '@mui/material';
 import {AccountCircle} from '@mui/icons-material';
 
-const UserView = () => {
+const UserView = ({color}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
@@ -53,7 +53,7 @@ const UserView = () => {
         aria-controls={menuId}
         aria-haspopup='true'
         onClick={handleProfileMenuOpen}
-        color='inherit'
+        color={color}
       >
         <AccountCircle />
       </IconButton>
