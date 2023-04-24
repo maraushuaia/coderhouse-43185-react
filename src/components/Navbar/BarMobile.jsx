@@ -7,6 +7,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
+import NotificationView from '../Notification/NotificationView';
+import CartView from '../CartWidget/CartWidgetView';
+import UserView from '../User/UserView';
 
 const BarMobile = () => {
   const [value, setValue] = React.useState(0);
@@ -28,11 +31,11 @@ const BarMobile = () => {
         >
           <BottomNavigationAction
             label='Alertas'
-            icon={<NotificationsIcon />}
+            icon={<NotificationView color='secondary'/>}
           />
-          <BottomNavigationAction label='Carrito' icon={<ShoppingCartIcon />} />
-          <BottomNavigationAction label='Mi Cuenta' icon={<AccountCircle />} />
-        </BottomNavigation>
+          <BottomNavigationAction label='Carrito' icon={<CartView color='secondary'/>} />
+          <BottomNavigationAction label='Mi Cuenta' icon={<UserView color='secondary'/>} />
+          </BottomNavigation>
       </BottomAppBar>
     </Box>
   );
