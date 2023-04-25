@@ -5,7 +5,7 @@ import React from 'react';
 import {Badge, IconButton} from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const CartView = ({color}) => {
+const CartWidgetView = ({color}) => {
   console.log('Contenido de color: =>', color);
   return (
     <IconButton
@@ -21,4 +21,4 @@ const CartView = ({color}) => {
   );
 };
 
-export default CartView;
+export default CartWidgetView;

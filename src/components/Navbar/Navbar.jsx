@@ -10,7 +10,7 @@ import Logo from './Logo';
 import UserView from '../User/UserView';
 import MenuDrawer from './MenuDrawer';
 
-const NavbarPrimaryApp = () => {
+const NavbarRender = () => {
 
   return (
     <Box sx={{flexGrow: 1, position: 'sticky', zIndex: 1, marginBottom: 10}}>
@@ -48,4 +48,4 @@ const NavbarPrimaryApp = () => {
   );
 };
 
-export default NavbarPrimaryApp;
+export default NavbarRender;
