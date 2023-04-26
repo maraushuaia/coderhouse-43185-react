@@ -9,7 +9,7 @@ import NavbarRender from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <Box>
+    <Box sx={{mb:8}}>
       <NavbarRender />
       <Container maxWidth='xl'>
         <ItemListContainer/>
