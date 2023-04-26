@@ -25,6 +25,11 @@ const ProductDetail = () => {
             variant='elevation'
              />
         </Container>
+        <Container>
+            <CardRender>
+                
+            </CardRender>
+        </Container>
     </Box>
   );
 };
