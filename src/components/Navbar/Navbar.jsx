@@ -37,7 +37,7 @@ const NavbarRender = () => {
               }}
             >
               <SearchView />
-            </Box>
+            </Box>            
             <NotificationView color='inherit'/>
             <CartView color='inherit'/>
             <UserView color='inherit'/>
