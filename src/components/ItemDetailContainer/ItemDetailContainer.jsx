@@ -12,8 +12,10 @@ const ItemDetailContainer = () => {
     <Box>
         <Container 
         maxWidth="lg"
-        backgroundColor='secondary ' 
-        sx={{backgroundColor: '#009688'}}
+        sx={{
+          backgroundColor: '#007590',
+          display: 'flex',
+          justifyContent: 'center'}}
         >
         <CardRender 
             img={img}
