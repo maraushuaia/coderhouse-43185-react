@@ -8,6 +8,7 @@ import BarMobile from "./components/Navbar/BarMobile";
 import NavbarRender from "./components/Navbar/Navbar";
 import Contador from "./components/Contador/Contador";
 import ProductList from "./components/Product/ProductList";
+import ProductCarousel from "./components/Carrusel/CarruselView";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <NavbarRender />
       <Container maxWidth="xl">
         {/* <ItemListContainer /> */}
-        <ProductList></ProductList>
+        {/* <ProductList></ProductList> */}
+        <ProductCarousel></ProductCarousel>
         <Contador stock={8}></Contador>
       </Container>
 
