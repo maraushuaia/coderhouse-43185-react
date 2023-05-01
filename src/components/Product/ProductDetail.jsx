@@ -1,22 +1,25 @@
-import { Box, Card, CardMedia, Container } from "@mui/material";
-import React from "react";
-import CardRender from "../Card/CardRender";
+import {Box, Card, CardMedia, Container} from '@mui/material';
+import React from 'react';
+import CardRender from '../Card/CardRender';
 
 const ProductDetail = () => {
   const img =
-    "https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667310/CoderHoseReact/habilitaciones_qgpbs6.png";
-  const alt = "Alt de la imagen";
+    'https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667310/CoderHoseReact/habilitaciones_qgpbs6.png';
+  const alt = 'Alt de la imagen';
   const price = 12;
-  const extract = "Este es el extracto del producto";
+  const extract = 'Este es el extracto del producto';
 
   return (
     <Box>
       <Container
-        maxWidth="xl"
+        maxWidth='xl'
         sx={{
-          backgroundColor: "#007590",
-          display: "flex",
-          justifyContent: "center",
+          // backgroundColor: '#007590',
+          width: '100%',
+          display: 'grid',
+          justifyContent: 'center',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '15px',
         }}
       >
         <CardRender
@@ -24,12 +27,57 @@ const ProductDetail = () => {
           alt={alt}
           price={price}
           extract={extract}
-          variant="elevation"
+          variant='elevation'
         />
-      </Container>
-
-      <Container>
-        <CardMedia></CardMedia>
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
+        <CardRender
+          img={img}
+          alt={alt}
+          price={price}
+          extract={extract}
+          variant='elevation'
+        />
       </Container>
     </Box>
   );

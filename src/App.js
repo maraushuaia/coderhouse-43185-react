@@ -10,6 +10,7 @@ import Contador from './components/Contador/Contador';
 import ProductList from './components/Product/ProductList';
 import ProductCarousel from './components/Carrusel/CarruselView';
 import Footer from './components/Footer/Footer';
+import ProductDetail from './components/Product/ProductDetail';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <Container maxWidth='xl'>
         {/* <ItemListContainer /> */}
         {/* <ProductList></ProductList> */}
-        <ProductCarousel></ProductCarousel>
+        {/* <ProductCarousel></ProductCarousel> */}
+        <ProductDetail />
         <Contador stock={8}></Contador>
       </Container>
       <Footer />
