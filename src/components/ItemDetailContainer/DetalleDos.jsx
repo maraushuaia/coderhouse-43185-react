@@ -9,22 +9,19 @@ const DetalleDos = ({name, descriptionGeneral, price, images}) => {
   };
 
   return (
-    <Box
-      sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}
-    >
+    <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <Typography variant='h5' sx={{my: 2}}>
         {name}
       </Typography>
 
       <Grid
         sx={{
-          display: {xs: 'block', md: 'flex'},
-          justifyContent: 'flex-start',
+          display: {md: 'flex'},
           mb: 2,
         }}
         item
         xs={10}
-        // flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
+        flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
       >
         <Box
           width={{xs: '400px', md: '800px', lg: '800px'}}

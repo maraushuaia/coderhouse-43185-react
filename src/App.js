@@ -150,6 +150,7 @@ function App() {
     <Box sx={{mb: 8}}>
       <NavbarRender />
       <Container maxWidth='xl' sx={{display: {display: 'grid'}}}>
+        {/* <Container maxWidth='xl'> */}
         <SearchProduct />
         {/* <ItemListContainer /> */}
 

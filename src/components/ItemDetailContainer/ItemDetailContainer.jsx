@@ -19,14 +19,23 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
   const [related, setRelated] = useState(relatedProducts);
 
   return (
-    <Box sx={{marginBottom: 4}}>
+    <Box
+      sx={{
+        marginBottom: 4,
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        mt: 2,
+      }}
+    >
       <Grid
         container
         sx={{
-          display: {xs: 'block', md: 'flex'},
+          display: {md: 'flex'},
+          flexDirection: {xs: 'column', md: 'row'},
+          p: 2,
         }}
       >
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={12} md={12} lg={8}>
           <DetalleDos
             name={productDetails.name}
             description={productDetails.description}
@@ -39,7 +48,7 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
           </Typography>
         </Grid>
 
-        <Grid item xs={4}>
+        <Grid item lg={4}>
           <Typography variant='h6' sx={{color: 'primary.main', mb: 2}}>
             Precio ${productDetails.price}
           </Typography>
@@ -47,25 +56,29 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
         </Grid>
       </Grid>
 
-      <Typography variant='h5' sx={{marginTop: 4}} gutterBottom>
-        Productos relacionados
-      </Typography>
+      <Box p={2}>
+        <Typography variant='h5' sx={{marginTop: 4}} gutterBottom>
+          Productos relacionados
+        </Typography>
 
-      <Container maxWidth='lg'>
-        <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-          {related.map((relatedProduct) => (
-            <CardRender
-              key={relatedProduct.id}
-              img={relatedProduct.img}
-              alt={relatedProduct.alt}
-              price={relatedProduct.price}
-              extract={relatedProduct.extract}
-              variant={relatedProduct.variant}
-              stock={relatedProduct.stock}
-            />
-          ))}
-        </Box>
-      </Container>
+        <Container maxWidth='lg'>
+          <Box
+            sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}
+          >
+            {related.map((relatedProduct) => (
+              <CardRender
+                key={relatedProduct.id}
+                img={relatedProduct.img}
+                alt={relatedProduct.alt}
+                price={relatedProduct.price}
+                extract={relatedProduct.extract}
+                variant={relatedProduct.variant}
+                stock={relatedProduct.stock}
+              />
+            ))}
+          </Box>
+        </Container>
+      </Box>
     </Box>
   );
 };
