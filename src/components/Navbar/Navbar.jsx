@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import OptionMenu from './OptionMenu';
-import SearchView from '../Search/SearchView';
 import NotificationView from '../Notification/NotificationView';
 import CartView from '../CartWidget/CartWidgetView';
 import Logo from './Logo';
@@ -29,14 +28,8 @@ const NavbarRender = () => {
               alignItems: 'center',
             }}
           >
-            {/* Aca se renderiza el la Busqueda, Notificaciones, CartWidget, User*/}
-            <Box
-              sx={{
-                display: {xs: 'none', sm: 'none', md: 'flex'},
-              }}
-            >
-              <SearchView />
-            </Box>
+            {/* Aca se renderiza las Notificaciones, CartWidget, User*/}
+
             <NotificationView color='inherit' />
             <CartView color='inherit' />
             <UserView color='inherit' />

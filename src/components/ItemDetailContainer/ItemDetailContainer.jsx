@@ -1,30 +1,71 @@
-import {Box, Container} from '@mui/material';
-import React from 'react';
-import CardRender from '../Card/CardRender';
+// componente que muestra el detalle de un producto
+// componente dentro de un contenedor box que es una card más grande que las otras
+// color de fondo de la card principal #003590
+// color de fondo de la card secundaria #007590
+// import const CardRender = ({img, alt, price, extract, variant}) => {
+// import React from 'react';
+// import {Box, Container, Typography} from '@mui/material';
+// import CartCounter from '../Contador/Contador';
 
-const ItemDetailContainer = () => {
-  const img ='https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667310/CoderHoseReact/habilitaciones_qgpbs6.png'
-  const alt = 'Alt de la imagen'
-  const price = 12
-  const extract = 'Este es el extracto del producto'
-  
+import React, {useState} from 'react';
+import {Box, Card, Container, Grid, Typography} from '@mui/material';
+import CardRender from '../Card/CardRender';
+import CartCounter from '../CartCounter/CartCounter';
+import CarruselProductos from '../Carrusel/CarruselView';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+import DetalleDos from './DetalleDos';
+
+const ItemDetailContainer = ({productDetails, relatedProducts}) => {
+  const [related, setRelated] = useState(relatedProducts);
+
   return (
-    <Box>
-        <Container 
-        maxWidth="lg"
+    <Box sx={{marginBottom: 4}}>
+      <Grid
+        container
         sx={{
-          backgroundColor: '#007590',
-          display: 'flex',
-          justifyContent: 'center'}}
-        >
-        <CardRender 
-            img={img}
-            alt={alt}
-            price={price}
-            extract={extract}
-            variant='elevation'
-             />
-        </Container>
+          display: {xs: 'block', md: 'flex'},
+        }}
+      >
+        <Grid item xs={8}>
+          <DetalleDos
+            name={productDetails.name}
+            description={productDetails.description}
+            descriptionGeneral={productDetails.descriptionGeneral}
+            price={productDetails.price}
+            images={productDetails.img}
+          />
+          <Typography variant='span' sx={{my: 2}}>
+            {productDetails.descriptionGeneral}
+          </Typography>
+        </Grid>
+
+        <Grid item xs={4}>
+          <Typography variant='h6' sx={{color: 'primary.main', mb: 2}}>
+            Precio ${productDetails.price}
+          </Typography>
+          <CartCounter stock={productDetails.stock} />
+        </Grid>
+      </Grid>
+
+      <Typography variant='h5' sx={{marginTop: 4}} gutterBottom>
+        Productos relacionados
+      </Typography>
+
+      <Container maxWidth='lg'>
+        <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+          {related.map((relatedProduct) => (
+            <CardRender
+              key={relatedProduct.id}
+              img={relatedProduct.img}
+              alt={relatedProduct.alt}
+              price={relatedProduct.price}
+              extract={relatedProduct.extract}
+              variant={relatedProduct.variant}
+              stock={relatedProduct.stock}
+            />
+          ))}
+        </Box>
+      </Container>
     </Box>
   );
 };

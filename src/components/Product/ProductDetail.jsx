@@ -1,4 +1,4 @@
-import {Box, Card, CardMedia, Container} from '@mui/material';
+import {Box, Container} from '@mui/material';
 import React from 'react';
 import CardRender from '../Card/CardRender';
 
@@ -14,7 +14,6 @@ const ProductDetail = () => {
       <Container
         maxWidth='xl'
         sx={{
-          // backgroundColor: '#007590',
           width: '100%',
           display: 'grid',
           justifyContent: 'center',

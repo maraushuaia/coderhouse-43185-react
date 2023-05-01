@@ -30,6 +30,7 @@ const CartCounter = ({stock}) => {
         display: {
           lg: 'block',
           alignItems: 'center',
+          minWidth: '250px',
         },
       }}
     >
