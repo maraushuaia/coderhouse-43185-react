@@ -71,7 +71,7 @@
 
 // export default ProductCarousel;
 
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react';
 import {
   Container,
   Typography,
@@ -82,60 +82,61 @@ import {
   CardActions,
   Button,
   CircularProgress,
-} from "@mui/material";
+} from '@mui/material';
 
 const Carrusel = () => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("./products.json")
+    fetch('../../products.js')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.products);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error al buscar productos: ", error);
+        console.error('Error al buscar productos: ', error);
         setLoading(false);
       });
   }, []);
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Productos en oferta R ODRIGO
+    <Container maxWidth='lg' sx={{mt: 4}}>
+      <Typography variant='h4' gutterBottom>
+        Productos en oferta RODRIGO
       </Typography>
+
       {loading ? (
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <CircularProgress />
         </Box>
       ) : (
-        <Box sx={{ display: "flex", overflowX: "scroll" }}>
+        <Box sx={{display: 'flex', overflowX: 'scroll'}}>
           {products.map((product) => (
-            <Box key={product.id} sx={{ minWidth: 300, mr: 2 }}>
+            <Box key={product.id} sx={{minWidth: 300, mr: 2}}>
               <Card>
                 <CardMedia
-                  component="img"
+                  component='img'
                   image={product.image}
                   alt={product.name}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h6" component="h3">
+                  <Typography gutterBottom variant='h6' component='h3'>
                     {product.name}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant='body2' color='text.secondary'>
                     Precio: ${product.price}
                   </Typography>
-                  <Typography variant="body2" color="secondary">
+                  <Typography variant='body2' color='secondary'>
                     ¡Oferta!
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary">
+                  <Button size='small' color='primary'>
                     Agregar al carrito
                   </Button>
-                  <Button size="small" color="secondary">
+                  <Button size='small' color='secondary'>
                     Ver detalles
                   </Button>
                 </CardActions>

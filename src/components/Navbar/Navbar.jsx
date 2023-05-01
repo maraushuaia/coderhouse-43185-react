@@ -11,7 +11,6 @@ import UserView from '../User/UserView';
 import MenuDrawer from './MenuDrawer';
 
 const NavbarRender = () => {
-
   return (
     <Box sx={{flexGrow: 1, position: 'sticky', zIndex: 1, marginBottom: 10}}>
       <AppBar color='secondary'>
@@ -37,10 +36,10 @@ const NavbarRender = () => {
               }}
             >
               <SearchView />
-            </Box>            
-            <NotificationView color='inherit'/>
-            <CartView color='inherit'/>
-            <UserView color='inherit'/>
+            </Box>
+            <NotificationView color='inherit' />
+            <CartView color='inherit' />
+            <UserView color='inherit' />
           </Box>
         </Toolbar>
       </AppBar>
