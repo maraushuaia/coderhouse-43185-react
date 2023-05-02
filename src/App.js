@@ -2,15 +2,10 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import {Box, Container} from '@mui/material';
 import BarMobile from './components/Navbar/BarMobile';
 import NavbarRender from './components/Navbar/Navbar';
-import Contador from './components/CartCounter/CartCounter';
-import ProductList from './components/Product/ProductList';
-import ProductCarousel from './components/Carrusel/CarruselView';
 import Footer from './components/Footer/Footer';
-import ProductDetail from './components/Product/ProductDetail';
 import SearchProduct from './components/Search/SearchContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 

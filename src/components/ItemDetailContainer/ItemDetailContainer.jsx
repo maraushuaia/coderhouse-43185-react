@@ -8,11 +8,9 @@
 // import CartCounter from '../Contador/Contador';
 
 import React, {useState} from 'react';
-import {Box, Card, Container, Grid, Typography} from '@mui/material';
+import {Box, Container, Grid, Typography} from '@mui/material';
 import CardRender from '../Card/CardRender';
 import CartCounter from '../CartCounter/CartCounter';
-import CarruselProductos from '../Carrusel/CarruselView';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import DetalleDos from './DetalleDos';
 
 const ItemDetailContainer = ({productDetails, relatedProducts}) => {
