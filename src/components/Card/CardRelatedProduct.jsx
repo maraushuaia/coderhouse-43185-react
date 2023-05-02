@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Button, Stack, Box, Divider } from "@mui/material";
 
-const CardRender = (props) => {
+const CardRelatedProduct = (props) => {
   const img = props.img;
   const alt = props.alt;
   const price = props.price;
@@ -18,7 +18,7 @@ const CardRender = (props) => {
           <CardMedia
             component="img"
             height="140"
-            image={img}
+            image={props.imgPrincipal}
             alt={alt}
             sx={{ mt: 2 }}
           />
@@ -51,16 +51,11 @@ const CardRender = (props) => {
             spacing={2}
             justifyContent={"center"}
             sx={{ mb: 2 }}
-          >
-            <Button variant="contained">Ver</Button>
-            <Button variant="contained" color="secondary">
-              Comprar
-            </Button>
-          </Stack>
+          ></Stack>
         </CardActionArea>
       </Card>
     </Box>
   );
 };
 
-export default CardRender;
+export default CardRelatedProduct;
