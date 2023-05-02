@@ -25,6 +25,9 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
         mt: 2,
       }}
     >
+      <Typography variant='h5' sx={{my: 2, ml: 2}}>
+        {productDetails.name}
+      </Typography>
       <Grid
         container
         sx={{
