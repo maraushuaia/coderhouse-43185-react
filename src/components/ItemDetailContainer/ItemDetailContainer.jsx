@@ -12,6 +12,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import CartCounter from "../CartCounter/CartCounter";
 import DetalleDos from "./DetalleDos";
 import CardRelatedProduct from "../Card/CardRelatedProduct";
+import dbProducts from "../../db/dbProducts.js";
 
 const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
   const [related, setRelated] = useState(relatedProducts);
