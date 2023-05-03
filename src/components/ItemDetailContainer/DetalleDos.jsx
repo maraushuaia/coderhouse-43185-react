@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 const DetalleDos = ({ name, descriptionGeneral, price, images }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
