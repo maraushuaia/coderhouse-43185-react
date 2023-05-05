@@ -25,7 +25,6 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
         mt: 2,
       }}
     >
-      1111
       <Typography variant="h5" sx={{ my: 2, ml: 2 }}>
         {productDetails.name}
       </Typography>
@@ -62,8 +61,12 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
         </Grid>
       </Grid>
       <Grid item xs="colum">
-        <Typography variant="h5" sx={{ marginTop: 4 }} gutterBottom>
-          Productos relacionados
+        <Typography
+          variant="h5"
+          sx={{ marginTop: { xs: 4, sm: 4, md: 7, lg: 8 }, ml: 2 }}
+          gutterBottom
+        >
+          Te puede interesar
         </Typography>
 
         <Container maxWidth="lg">
