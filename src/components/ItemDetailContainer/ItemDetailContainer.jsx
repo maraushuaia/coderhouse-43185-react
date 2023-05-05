@@ -25,13 +25,14 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
         mt: 2,
       }}
     >
+      1111
       <Typography variant="h5" sx={{ my: 2, ml: 2 }}>
         {productDetails.name}
       </Typography>
       <Grid
         container
         sx={{
-          display: { md: "flex" },
+          display: { xs: "grid", sm: "grid", md: "flex" },
           flexDirection: { xs: "column", md: "row" },
           p: 2,
         }}
@@ -60,15 +61,20 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
           <CartCounter stock={productDetails.stock} />
         </Grid>
       </Grid>
-
-      <Box p={2}>
+      <Grid item xs="colum">
         <Typography variant="h5" sx={{ marginTop: 4 }} gutterBottom>
           Productos relacionados
         </Typography>
 
         <Container maxWidth="lg">
-          <Box
-            sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+          <Grid
+            sx={{
+              width: "100%",
+              display: "grid",
+              justifyContent: "center",
+              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+              gap: "15px",
+            }}
           >
             {related.map((relatedProduct) => (
               <CardRelatedProduct
@@ -82,9 +88,9 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
                 stock={relatedProduct.stock}
               />
             ))}
-          </Box>
+          </Grid>
         </Container>
-      </Box>
+      </Grid>
     </Box>
   );
 };
