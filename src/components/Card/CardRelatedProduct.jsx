@@ -5,12 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea, Button, Stack, Box, Divider} from '@mui/material';
 
-const CardRelatedProduct = (props) => {
-  const img = props.img;
-  const alt = props.alt;
-  const price = props.price;
-  const extract = props.extract;
-
+const CardRelatedProduct = (imgPrincipal, alt, price, extract) => {
   return (
     <Box sx={{mx: 2}}>
       <Card>
@@ -18,7 +13,7 @@ const CardRelatedProduct = (props) => {
           <CardMedia
             component='img'
             height='140'
-            image={props.imgPrincipal}
+            image={imgPrincipal}
             alt={alt}
             sx={{mt: 2}}
           />
