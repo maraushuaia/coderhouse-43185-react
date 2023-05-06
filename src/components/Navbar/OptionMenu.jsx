@@ -14,6 +14,7 @@ const OptionMenu = () => {
     <Box sx={{display: {xs: 'none', sm: 'none', md: 'none', lg: 'block'}}}>
       {pages.map((page) => (
         <Button
+          key={page}
           variant='text'
           color='inherit'
           style={{

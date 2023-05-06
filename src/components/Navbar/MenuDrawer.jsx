@@ -9,7 +9,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import {IconButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const MenuDrawer = () => {
@@ -66,25 +65,24 @@ const MenuDrawer = () => {
 
   return (
     <Box sx={{display: {xs: 'flex', sm: 'flex', md: 'flex', lg: 'none'}}}>
-      <IconButton
+      <MenuIcon
         size='large'
         edge='start'
         color='inherit'
         aria-label='open drawer'
         sx={{mr: 1}}
-      >
-        <MenuIcon onClick={toggleDrawer('left', true)} />
-        <React.Fragment key={'left'}>
-          <SwipeableDrawer
-            anchor={'left'}
-            open={state['left']}
-            onClose={toggleDrawer('left', false)}
-            onOpen={toggleDrawer('left', true)}
-          >
-            {list('left')}
-          </SwipeableDrawer>
-        </React.Fragment>
-      </IconButton>
+        onClick={toggleDrawer('left', true)}
+      />
+      <React.Fragment key={'left'}>
+        <SwipeableDrawer
+          anchor={'left'}
+          open={state['left']}
+          onClose={toggleDrawer('left', false)}
+          onOpen={toggleDrawer('left', true)}
+        >
+          {list('left')}
+        </SwipeableDrawer>
+      </React.Fragment>
     </Box>
   );
 };
