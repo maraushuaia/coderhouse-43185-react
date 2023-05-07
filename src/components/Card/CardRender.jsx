@@ -5,12 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea, Button, Stack, Box, Divider} from '@mui/material';
 
-const CardRender = (img, alt, price, extract) => {
-  // const img = props.img;
-  // const alt = props.alt;
-  // const price = props.price;
-  // const extract = props.extract;
-
+const CardRender = ({img, alt, price, extract}) => {
   return (
     <Box sx={{mx: 2}}>
       <Card>

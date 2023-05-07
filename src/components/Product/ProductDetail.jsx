@@ -28,55 +28,6 @@ const ProductDetail = () => {
           extract={extract}
           variant='elevation'
         />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
-        <CardRender
-          img={img}
-          alt={alt}
-          price={price}
-          extract={extract}
-          variant='elevation'
-        />
       </Container>
     </Box>
   );

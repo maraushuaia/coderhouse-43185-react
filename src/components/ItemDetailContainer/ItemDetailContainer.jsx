@@ -61,11 +61,7 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
         </Grid>
       </Grid>
       <Grid item xs='colum'>
-        <Typography
-          variant='h5'
-          sx={{marginTop: {xs: 4, sm: 4, md: 7, lg: 8}, ml: 2}}
-          gutterBottom
-        >
+        <Typography variant='h5' gutterBottom>
           Te puede interesar
         </Typography>
 

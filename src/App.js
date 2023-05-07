@@ -9,25 +9,17 @@ import Footer from './components/Footer/Footer';
 import SearchProduct from './components/Search/SearchContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ProductList from './components/Product/ProductList';
+import CardRender from './components/Card/CardRender';
+import ProductDetail from './components/Product/ProductDetail';
 
 function App() {
   return (
     <Box sx={{mb: 8}}>
       <NavbarRender />
       <Container maxWidth='xl' sx={{display: {display: 'grid'}}}>
-        {/* <Container maxWidth='xl'> */}
         <SearchProduct />
-        {/* <ItemListContainer /> */}
-
         <ProductList />
-        {/* <ProductCarousel></ProductCarousel> */}
-        {/* <ProductDetail /> */}
-        {/* <Contador stock={8}></Contador> */}
-
-        {/* <ItemDetailContainer
-          productDetails={product}
-          relatedProducts={relatedProducts}
-        /> */}
+        {/* <ItemDetailContainer /> */}
       </Container>
       <Footer />
       <BarMobile />

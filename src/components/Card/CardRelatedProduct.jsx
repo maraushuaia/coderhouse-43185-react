@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import {CardActionArea, Button, Stack, Box, Divider} from '@mui/material';
 
 const CardRelatedProduct = (imgPrincipal, alt, price, extract) => {
+  console.log(imgPrincipal);
   return (
     <Box sx={{mx: 2}}>
       <Card>
