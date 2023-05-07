@@ -8,6 +8,7 @@ import {
   CardContent,
   CircularProgress,
   CardActionArea,
+  Divider,
 } from '@mui/material';
 import {dbProducts} from '../../products';
 
@@ -75,6 +76,7 @@ const ProductList = () => {
                     alignItems: 'center',
                   }}
                 />
+
                 <CardContent sx={{flexGrow: 1}}>
                   <Box
                     sx={{
@@ -115,13 +117,14 @@ const ProductList = () => {
                       {product.description}
                     </Typography>
                   </Box>
-
+                  <Divider />
                   <Box
                     sx={{
                       height: {xs: '30px', sm: '50px', md: '50px', lg: '80px'},
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
+                      pt: {xs: 3.5, sm: 1, md: 1, lg: 1},
                     }}
                   >
                     <Typography gutterBottom variant='h6' component='div'>
