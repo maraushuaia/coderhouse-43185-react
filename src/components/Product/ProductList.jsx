@@ -54,7 +54,7 @@ const ProductList = () => {
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: 3,
+                boxShadow: 5,
               }}
               onClick={() => handleClick(product.id)}
             >

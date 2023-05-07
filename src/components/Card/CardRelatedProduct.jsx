@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {CardActionArea, Button, Stack, Box, Divider} from '@mui/material';
+import {CardActionArea, Stack, Box, Divider} from '@mui/material';
 
 const CardRelatedProduct = (imgPrincipal, alt, price, extract) => {
   console.log(imgPrincipal);
