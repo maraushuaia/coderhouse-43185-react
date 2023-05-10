@@ -81,35 +81,35 @@
 // import {Box, Container, Typography} from '@mui/material';
 // import CartCounter from '../Contador/Contador';
 
-import React, { useState } from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
-import CartCounter from "../CartCounter/CartCounter";
-import CardRelatedProduct from "../Card/CardRelatedProduct";
-import ItemDetailContainerView from "./ItemDetailContainerView";
+import React, {useState} from 'react';
+import {Box, Container, Grid, Typography} from '@mui/material';
+import CartCounter from '../CartCounter/CartCounter';
+import CardRelatedProduct from '../Card/CardRelatedProduct';
+import ItemDetailContainerView from './ItemDetailContainerView';
 
-const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
+const ItemDetailContainer = ({productDetails, relatedProducts}) => {
   const [related, setRelated] = useState(relatedProducts);
 
-  console.log("Producto a Detallar: ", productDetails);
-  console.log("Productos Relacionados: ", relatedProducts);
+  console.log('Producto a Detallar: ', productDetails);
+  console.log('Productos Relacionados: ', relatedProducts);
 
   return (
     <Box
       sx={{
         marginBottom: 4,
-        backgroundColor: "white",
-        borderRadius: "10px",
+        backgroundColor: 'white',
+        borderRadius: '10px',
         mt: 2,
       }}
     >
-      <Typography variant="h5" sx={{ my: 2, ml: 2 }}>
+      <Typography variant='h5' sx={{my: 2, ml: 2}}>
         {productDetails.name}
       </Typography>
       <Grid
         container
         sx={{
-          display: { xs: "grid", sm: "grid", md: "flex" },
-          flexDirection: { xs: "column", md: "row" },
+          display: {xs: 'grid', sm: 'grid', md: 'flex'},
+          flexDirection: {xs: 'column', md: 'row'},
           p: 2,
         }}
       >
@@ -121,36 +121,36 @@ const ItemDetailContainer = ({ productDetails, relatedProducts }) => {
             price={productDetails.price}
             images={productDetails.img}
           />
-          <Typography variant="span" sx={{ my: 2 }}>
+          <Typography variant='span' sx={{my: 2}}>
             {productDetails.descriptionGeneral}
           </Typography>
         </Grid>
 
         <Grid item lg={4}>
           <Typography
-            variant="h6"
-            sx={{ color: "primary.main", mb: 2 }}
-            ml={{ xs: 0, sm: 3, md: 3, lg: 3 }}
+            variant='h6'
+            sx={{color: 'primary.main', mb: 2}}
+            ml={{xs: 0, sm: 3, md: 3, lg: 3}}
           >
             Precio ${productDetails.price}
           </Typography>
           <CartCounter stock={productDetails.stock} />
         </Grid>
       </Grid>
-      <Grid item xs="colum">
-        <Typography variant="h5" gutterBottom>
+      <Grid item xs='colum'>
+        <Typography variant='h5' gutterBottom>
           Te puede interesar
         </Typography>
 
-        <Container maxWidth="lg">
+        <Container maxWidth='lg'>
           <Grid
             sx={{
-              width: "100%",
-              display: "grid",
-              justifyContent: "center",
-              gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+              width: '100%',
+              display: 'grid',
+              justifyContent: 'center',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
             }}
-            gap={{ xs: 1, sm: 6, md: 6, lg: 6 }}
+            gap={{xs: 1, sm: 6, md: 6, lg: 6}}
             mb={3}
           >
             {related.map((relatedProduct) => (
