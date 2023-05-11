@@ -16,7 +16,6 @@ import {
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 import {createClient} from '@supabase/supabase-js';
-import {Link} from 'react-router-dom';
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -42,16 +41,11 @@ const ItemListContainer = () => {
       if (products[i].id === id) {
         let productSelected = products[i];
         setProductSelected(productSelected);
-        console.log('Detalles del Producto Seleccionado:=> ', productSelected);
+        console.log('Detalles del Producto Seleccionado: ', productSelected);
       }
-      <Link to={`/item/${id}`}>
-        <ItemDetailContainer
-          productDetails={productSelected}
-          relatedProducts={productSelected}
-        />
-        ;
-      </Link>;
     }
+
+    <ItemDetailContainer articulo={(productSelected, productSelected)} />;
   };
 
   return (

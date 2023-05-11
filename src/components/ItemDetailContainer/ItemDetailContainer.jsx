@@ -90,8 +90,8 @@ import ItemDetailContainerView from './ItemDetailContainerView';
 const ItemDetailContainer = ({productDetails, relatedProducts}) => {
   const [related, setRelated] = useState(relatedProducts);
 
-  console.log('Producto a Detallar: ', productDetails);
-  console.log('Productos Relacionados: ', relatedProducts);
+  // console.log('Producto a Detallar dentro del Detalle: ', productDetails);
+  // console.log('Productos Relacionados dentro del Detalle: ', relatedProducts);
 
   return (
     <Box

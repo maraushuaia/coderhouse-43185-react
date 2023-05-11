@@ -5,6 +5,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 // import {Link} from 'react-router-dom';
 
 const pages = ['Categorias', 'Ofertas', 'Historial', 'Ayuda'];
@@ -21,13 +22,14 @@ const OptionMenu = () => {
             fontSize: '16px',
           }}
         >
-          {/* <Link
-              style={{textDecoration: 'none', color: 'inherit'}}
-              //   to={'/estado/' + page}
-            >
-              {page}
-            </Link> */}
-          {page}
+          <Link
+            style={{textDecoration: 'none', color: 'inherit'}}
+            // to={'/categoria/' + page}
+            to={page}
+          >
+            {page}
+          </Link>
+          {/* {page} */}
         </Button>
       ))}
     </Box>
