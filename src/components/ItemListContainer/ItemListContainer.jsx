@@ -19,9 +19,11 @@ const ItemListContainer = () => {
   const [productSelected, setProductSelected] = useState([]);
 
   useEffect(() => {
-    fetch('http://administracion-shop.rodrigomunoz.com.ar/items/products')
+    // fetch('http://administracion-shop.rodrigomunoz.com.ar/items/products')
+    fetch('./products.json')
       .then((response) => response.json())
-      .then((data) => setProducts(data.data))
+      // .then((data) => setProducts(data.data))
+      .then((data) => setProducts(data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -59,8 +61,9 @@ const ItemListContainer = () => {
           mb={2}
           gap={{xs: 1.5, sm: 2, md: 3, lg: 4}}
         >
-          {products.map((product) =>
-            product.status === 'published' ? (
+          {products.map(
+            (product) => (
+              // product.status === 'published' ? (
               <CardActionArea
                 key={product.id}
                 sx={{
@@ -73,7 +76,8 @@ const ItemListContainer = () => {
                 <Card sx={{flexGrow: 1}}>
                   <CardMedia
                     component='img'
-                    image={product.imageMain}
+                    // image={product.imageMain}
+                    image={product.imgPrincipal}
                     alt={product.name}
                     sx={{
                       objectFit: 'contain',
@@ -131,7 +135,7 @@ const ItemListContainer = () => {
                       }}
                     >
                       <Typography variant='body2' color='text.secondary'>
-                        {product.descriptionshort}
+                        {product.description}
                       </Typography>
                     </Box>
                     <Divider />
@@ -156,7 +160,8 @@ const ItemListContainer = () => {
                   </CardContent>
                 </Card>
               </CardActionArea>
-            ) : null
+            )
+            // ) : null
           )}
         </Box>
       )}
