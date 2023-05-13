@@ -1,11 +1,13 @@
 [
   {
     "id": 1,
+    "status": "published",
     "name": "Monitor",
-    "description": "27-inch monitor with 4K resolution",
+    "descriptionshort": "27-inch monitor with 4K resolution",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 500,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057149/react43185/monitor1a_w5uygr.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057149/react43185/monitor1a_w5uygr.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057149/react43185/monitor1b_p8mmrr.webp"
@@ -27,11 +29,13 @@
   },
   {
     "id": 2,
+    "status": "published",
     "name": "Keyboard",
-    "description": "Mechanical keyboard with RGB lighting",
+    "descriptionshort": "Mechanical keyboard with RGB lighting",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 80,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057455/react43185/monitor2a_uhiv8q.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057455/react43185/monitor2a_uhiv8q.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667685/CoderHoseReact/zoonosis2_zslxvj.png"
@@ -53,11 +57,13 @@
   },
   {
     "id": 3,
+    "status": "published",
     "name": "Mouse",
-    "description": "Wireless mouse with ergonomic design",
+    "descriptionshort": "Wireless mouse with ergonomic design",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 50,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057455/react43185/monitor3a_s5josw.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057455/react43185/monitor3a_s5josw.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667685/CoderHoseReact/zoonosis2_zslxvj.png"
@@ -79,11 +85,13 @@
   },
   {
     "id": 4,
+    "status": "published",
     "name": "Headphones",
-    "description": "Noise-cancelling headphones with Bluetooth connectivity",
+    "descriptionshort": "Noise-cancelling headphones with Bluetooth connectivity",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 150,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057454/react43185/monitor4a_pitwhu.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057454/react43185/monitor4a_pitwhu.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667685/CoderHoseReact/zoonosis2_zslxvj.png"
@@ -105,12 +113,13 @@
   },
   {
     "id": 5,
+    "status": "published",
     "name": "Laptop",
-    "description": "Powerful laptop with 16GB RAM and 512GB SSD",
-    "descriptionGeneral": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
+    "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 1200,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp"
@@ -132,12 +141,13 @@
   },
   {
     "id": 6,
+    "status": "published",
     "name": "Laptop",
-    "description": "Powerful laptop with 16GB RAM and 512GB SSD",
-    "descriptionGeneral": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
+    "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 1200,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp"
@@ -159,12 +169,13 @@
   },
   {
     "id": 7,
+    "status": "published",
     "name": "Laptop",
-    "description": "Powerful laptop with 16GB RAM and 512GB SSD",
-    "descriptionGeneral": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
+    "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 1200,
-    "imgPrincipal": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
-    "img": [
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
+    "imageAditional": [
       {
         "id": 1,
         "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp"

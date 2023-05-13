@@ -87,10 +87,10 @@ import CartCounter from '../CartCounter/CartCounter';
 import CardRelatedProduct from '../Card/CardRelatedProduct';
 import ItemDetailContainerView from './ItemDetailContainerView';
 
-const ItemDetailContainer = ({productDetails, relatedProducts}) => {
-  const [related, setRelated] = useState(relatedProducts);
+const ItemDetailContainer = ({productSelected, productRelated}) => {
+  const [related, setRelated] = useState([productRelated]);
 
-  // console.log('Producto a Detallar dentro del Detalle: ', productDetails);
+  // console.log('Producto a Detallar dentro del Detalle: ', productSelected);
   // console.log('Productos Relacionados dentro del Detalle: ', relatedProducts);
 
   return (
@@ -103,7 +103,7 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
       }}
     >
       <Typography variant='h5' sx={{my: 2, ml: 2}}>
-        {productDetails.name}
+        {productSelected.name}
       </Typography>
       <Grid
         container
@@ -115,14 +115,14 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
       >
         <Grid item xs={12} sm={12} md={12} lg={8}>
           <ItemDetailContainerView
-            name={productDetails.name}
-            description={productDetails.description}
-            descriptionGeneral={productDetails.descriptionGeneral}
-            price={productDetails.price}
-            images={productDetails.img}
+            name={productSelected.name}
+            description={productSelected.description}
+            descriptionGeneral={productSelected.descriptionGeneral}
+            price={productSelected.price}
+            images={productSelected.img}
           />
           <Typography variant='span' sx={{my: 2}}>
-            {productDetails.descriptionGeneral}
+            {productSelected.descriptionGeneral}
           </Typography>
         </Grid>
 
@@ -132,9 +132,9 @@ const ItemDetailContainer = ({productDetails, relatedProducts}) => {
             sx={{color: 'primary.main', mb: 2}}
             ml={{xs: 0, sm: 3, md: 3, lg: 3}}
           >
-            Precio ${productDetails.price}
+            Precio ${productSelected.price}
           </Typography>
-          <CartCounter stock={productDetails.stock} />
+          <CartCounter stock={productSelected.stock} />
         </Grid>
       </Grid>
       <Grid item xs='colum'>

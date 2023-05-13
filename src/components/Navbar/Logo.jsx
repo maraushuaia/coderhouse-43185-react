@@ -27,7 +27,6 @@ const Logo = () => {
           }}
           marginRight={'2.5em'}
           color={'#fff'}
-          underlineNone
         >
           CATERPILAR
         </Typography>
