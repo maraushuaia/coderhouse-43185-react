@@ -1,9 +1,11 @@
+// Componente que renderiza imagenes de un producto en particular
+// Componente hijo de ItemDetailContainer
+
 import React, {useState} from 'react';
 import {Box, Grid} from '@mui/material';
 
-const ItemDetailContainerView = ({images}) => {
-  const [selectedImage, setSelectedImage] = useState([]);
-  const [imagenes, setImage] = useState({images});
+const CardImages = ({images}) => {
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
   const handleImageSelect = (image) => {
     setSelectedImage(image);
@@ -18,8 +20,7 @@ const ItemDetailContainerView = ({images}) => {
         }}
         item
         xs={10}
-        // flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
-        flexDirection={{xs: 'row', sm: 'column', md: 'column', lg: 'column'}}
+        flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
       >
         <Box
           width={{xs: '290px', sm: '370px', md: '800px', lg: '800px'}}
@@ -39,7 +40,7 @@ const ItemDetailContainerView = ({images}) => {
               alignItems: 'flex-start',
             }}
           >
-            {imagenes.map((image, index) => (
+            {images.map((image, index) => (
               <Box
                 key={index}
                 width={{xs: '55px', sm: '75px', md: '100px', lg: '160px'}}
@@ -64,4 +65,4 @@ const ItemDetailContainerView = ({images}) => {
   );
 };
 
-export default ItemDetailContainerView;
+export default CardImages;

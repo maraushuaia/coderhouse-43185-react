@@ -1,3 +1,4 @@
+// Este componente busca un producto especifico en un array de productos, y lo devuelve en un objeto
 import {useEffect, useState} from 'react';
 
 const useSearchProductID = (id) => {
@@ -9,7 +10,9 @@ const useSearchProductID = (id) => {
     fetch(process.env.REACT_APP_URL_LOCAL)
       .then((response) => response.json())
       .then((data) => {
-        const foundProduct = data.find((product) => product.id === id);
+        const foundProduct = data.find(
+          (item) => Number(item.id) === Number(id)
+        );
         if (foundProduct) {
           setProduct(foundProduct);
         } else {

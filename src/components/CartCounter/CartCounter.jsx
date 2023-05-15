@@ -34,7 +34,7 @@ const CartCounter = ({stock}) => {
         },
       }}
     >
-      <Container maxWidth='sm' textAlign='center'>
+      <Container maxWidth='sm'>
         <Box marginTop={1} marginBottom={2}>
           <Typography variant='subtitle2'>
             Unidades disponibles: {stock}
