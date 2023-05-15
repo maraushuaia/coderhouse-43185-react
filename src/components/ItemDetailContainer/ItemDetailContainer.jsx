@@ -86,12 +86,14 @@ import {Box, Container, Grid, Typography} from '@mui/material';
 import CartCounter from '../CartCounter/CartCounter';
 import CardRelatedProduct from '../Card/CardRelatedProduct';
 import ItemDetailContainerView from './ItemDetailContainerView';
+import BuscarProductos from '../hooks/BuscarProductoSeleccionado';
+import {useParams} from 'react-router-dom';
 
-const ItemDetailContainer = ({productSelected, productRelated}) => {
-  const [related, setRelated] = useState([productRelated]);
+const ItemDetailContainer = ({product}) => {
+  // const [related, setRelated] = useState([productRelated]);
+  const id = useParams();
 
-  // console.log('Producto a Detallar dentro del Detalle: ', productSelected);
-  // console.log('Productos Relacionados dentro del Detalle: ', relatedProducts);
+  const productSelected = <BuscarProductos id={id} />;
 
   return (
     <Box
@@ -115,14 +117,15 @@ const ItemDetailContainer = ({productSelected, productRelated}) => {
       >
         <Grid item xs={12} sm={12} md={12} lg={8}>
           <ItemDetailContainerView
-            name={productSelected.name}
-            description={productSelected.description}
-            descriptionGeneral={productSelected.descriptionGeneral}
-            price={productSelected.price}
-            images={productSelected.img}
+            // name={productSelected.name}
+            // description={productSelected.descriptionshort}
+            // descriptionGeneral={productSelected.descriptionLong}
+            // price={productSelected.price}
+            images={productSelected.imageAditional}
           />
+
           <Typography variant='span' sx={{my: 2}}>
-            {productSelected.descriptionGeneral}
+            {productSelected.descriptionLong}
           </Typography>
         </Grid>
 
@@ -137,7 +140,8 @@ const ItemDetailContainer = ({productSelected, productRelated}) => {
           <CartCounter stock={productSelected.stock} />
         </Grid>
       </Grid>
-      <Grid item xs='colum'>
+      {/* <Grid item xs='colum'> */}
+      <Grid>
         <Typography variant='h5' gutterBottom>
           Te puede interesar
         </Typography>
@@ -153,7 +157,7 @@ const ItemDetailContainer = ({productSelected, productRelated}) => {
             gap={{xs: 1, sm: 6, md: 6, lg: 6}}
             mb={3}
           >
-            {related.map((relatedProduct) => (
+            {/* {related.map((relatedProduct) => (
               <CardRelatedProduct
                 key={relatedProduct.id}
                 img={relatedProduct.img}
@@ -164,7 +168,8 @@ const ItemDetailContainer = ({productSelected, productRelated}) => {
                 variant={relatedProduct.variant}
                 stock={relatedProduct.stock}
               />
-            ))}
+            ))} */}
+            <h3>aca va</h3>
           </Grid>
         </Container>
       </Grid>

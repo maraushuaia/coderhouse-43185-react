@@ -2,24 +2,13 @@
 // //Se importa el componente ItemDetailView para mostrar el detalle del producto al hacer click en el mismo
 
 import React, {useState, useEffect} from 'react';
-import {
-  Container,
-  Typography,
-  Box,
-  Card,
-  CardMedia,
-  CardContent,
-  CircularProgress,
-  CardActionArea,
-  Divider,
-} from '@mui/material';
+import {Container, Typography, Box, CircularProgress} from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import CardProducts from '../Card/CardProducts';
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [productSelected, setProductSelected] = useState([]);
-  const {id} = useParams();
 
   useEffect(() => {
     fetch(process.env.REACT_APP_URL_LOCAL)
@@ -36,9 +25,22 @@ const ItemListContainer = () => {
     if (selectedProduct && selectedProduct.status === 'published') {
       setProductSelected(selectedProduct);
       console.log('Producto Seleccionado:=> ', selectedProduct);
-      <ItemDetailContainer productSelected={selectedProduct} />;
     }
   };
+
+  // const handleClick = (id) => {
+  //   const selectedProduct = products.find((product) => product.id === id);
+  //   if (selectedProduct && selectedProduct.status === 'published') {
+  //     setProductSelected(selectedProduct);
+
+  //     productSelected && (
+  //       <Link to={`/item/:${id}`} style={{textDecoration: 'none'}}>
+  //         <ItemDetailContainer productSelected={productSelected} />
+  //       </Link>
+  //     );
+  //     console.log('Producto Seleccionado:=> ', selectedProduct);
+  //   }
+  // };
 
   return (
     <Container maxWidth='xl' sx={{mt: 4}}>
@@ -69,102 +71,14 @@ const ItemListContainer = () => {
           {products.map(
             (product) => (
               // product.status === 'published' ? (
-
-              <CardActionArea
+              <Link
                 key={product.id}
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  boxShadow: 5,
-                }}
-                onClick={() => handleClick(product.id)}
+                // onClick={() => handleClick(product.id)}
+                to={`/itemDetail/${product.id}`}
+                style={{textDecoration: 'none'}}
               >
-                <Card sx={{flexGrow: 1}}>
-                  <CardMedia
-                    component='img'
-                    image={product.imageMain}
-                    alt={product.name}
-                    sx={{
-                      objectFit: 'contain',
-                      height: {
-                        xs: '90px',
-                        sm: '110px',
-                        md: '140px',
-                        lg: '140px',
-                      },
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                  />
-
-                  <CardContent sx={{flexGrow: 1}}>
-                    <Box
-                      sx={{
-                        height: {
-                          xs: '35px',
-                          sm: '40px',
-                          md: '50px',
-                          lg: '60px',
-                        },
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Typography
-                        gutterBottom
-                        variant='h5'
-                        component='h2'
-                        sx={{
-                          fontSize: {
-                            xs: '1.4em',
-                            sm: '1.5em',
-                            md: '1.7em',
-                            lg: '1.7em',
-                          },
-                        }}
-                      >
-                        {product.name}
-                      </Typography>
-                    </Box>
-
-                    <Box
-                      sx={{
-                        height: {
-                          xs: '90px',
-                          sm: '80px',
-                          md: '70px',
-                          lg: '80px',
-                        },
-                      }}
-                    >
-                      <Typography variant='body2' color='text.secondary'>
-                        {product.descriptionshort}
-                      </Typography>
-                    </Box>
-                    <Divider />
-                    <Box
-                      sx={{
-                        height: {
-                          xs: '30px',
-                          sm: '50px',
-                          md: '50px',
-                          lg: '80px',
-                        },
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        pt: {xs: 3.5, sm: 1, md: 1, lg: 1},
-                      }}
-                    >
-                      <Typography gutterBottom variant='h6' component='div'>
-                        ${product.price}
-                      </Typography>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </CardActionArea>
+                <CardProducts product={product} />
+              </Link>
             )
 
             // ) : null
