@@ -6,7 +6,7 @@ const useSearchProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_DIRECTUS_API_URL)
+    fetch(process.env.REACT_APP_URL_LOCAL)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
