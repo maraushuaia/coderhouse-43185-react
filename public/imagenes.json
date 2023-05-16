@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1683057149/react43185/monitor1a_w5uygr.webp",
+    "caption": "Descripción de la imagen 1"
+  },
+  {
+    "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1678667685/CoderHoseReact/zoonosis2_zslxvj.png",
+    "caption": "Descripción de la imagen 2"
+  },
+  {
+    "url": "https://example.com/imagen3.jpg",
+    "caption": "Descripción de la imagen 3"
+  },
+  {
+    "url": "https://example.com/imagen4.jpg",
+    "caption": "Descripción de la imagen 4"
+  }
+]
