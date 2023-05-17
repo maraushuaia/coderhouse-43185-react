@@ -83,6 +83,7 @@ const ItemDetailContainer = () => {
               gap={{xs: 1, sm: 6, md: 6, lg: 6}}
               mb={3}
             >
+              <h3>Acá irán los productos relacionados que se ofrecerán</h3>
               {/* {related.map((relatedProduct) => (
               <CardRelatedProduct
                 key={relatedProduct.id}
@@ -95,7 +96,6 @@ const ItemDetailContainer = () => {
                 stock={relatedProduct.stock}
               />
             ))} */}
-              <h3>aca va</h3>
             </Grid>
           </Container>
         </Grid>

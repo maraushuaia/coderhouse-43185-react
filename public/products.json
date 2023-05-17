@@ -2,6 +2,7 @@
   {
     "id": 1,
     "status": "published",
+    "category": "informatica",
     "name": "Monitor",
     "descriptionshort": "27-inch monitor with 4K resolution",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -30,6 +31,7 @@
   {
     "id": 2,
     "status": "published",
+    "category": "informatica",
     "name": "Keyboard",
     "descriptionshort": "Mechanical keyboard with RGB lighting",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -58,6 +60,7 @@
   {
     "id": 3,
     "status": "published",
+    "category": "informatica",
     "name": "Mouse",
     "descriptionshort": "Wireless mouse with ergonomic design",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -86,6 +89,7 @@
   {
     "id": 4,
     "status": "published",
+    "category": "informatica",
     "name": "Headphones",
     "descriptionshort": "Noise-cancelling headphones with Bluetooth connectivity",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -114,27 +118,28 @@
   {
     "id": 5,
     "status": "published",
-    "name": "Laptop",
+    "category": "muebles-decoracion",
+    "name": "Vehiculos",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 1200,
-    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/camioneta6_hxicgm.webp",
     "imageAditional": [
       {
         "id": 1,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281370/react43185/camioneta1_titack.webp"
       },
       {
         "id": 2,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor2_qpz8q5.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281370/react43185/camioneta4_ntp6s2.webp"
       },
       {
         "id": 3,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974656/react43185/monitor3_uznzo6.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/camioneta2_xmqr1q.webp"
       },
       {
         "id": 4,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974656/react43185/monitor4_lv7elg.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/camioneta3_xrn2nz.webp"
       }
     ],
     "stock": 10
@@ -142,6 +147,36 @@
   {
     "id": 6,
     "status": "published",
+    "category": "muebles-decoracion",
+    "name": "Cama",
+    "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
+    "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
+    "price": 1200,
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/cama1_paxj8l.webp",
+    "imageAditional": [
+      {
+        "id": 1,
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/cama3_metzhz.webp"
+      },
+      {
+        "id": 2,
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama4_k1bykq.webp"
+      },
+      {
+        "id": 3,
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama5_mpl3kv.webp"
+      },
+      {
+        "id": 4,
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/cama2_dhtdoe.webp"
+      }
+    ],
+    "stock": 10
+  },
+  {
+    "id": 7,
+    "status": "published",
+    "category": "ropa-accesorios",
     "name": "Laptop",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -168,29 +203,34 @@
     "stock": 10
   },
   {
-    "id": 7,
+    "id": 8,
     "status": "published",
-    "name": "Laptop",
+    "category": "muebles-decoracion",
+    "name": "Cama",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
     "price": 1200,
-    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp",
+    "imageMain": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama7_ritv38.webp",
     "imageAditional": [
       {
         "id": 1,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor1_dvgvxw.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama7_ritv38.webp"
       },
       {
         "id": 2,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974657/react43185/monitor2_qpz8q5.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/cama3_metzhz.webp"
       },
       {
         "id": 3,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974656/react43185/monitor3_uznzo6.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281369/react43185/cama2_dhtdoe.webp"
       },
       {
         "id": 4,
-        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1682974656/react43185/monitor4_lv7elg.webp"
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama4_k1bykq.webp"
+      },
+      {
+        "id": 5,
+        "url": "https://res.cloudinary.com/dtvrg3by2/image/upload/v1684281368/react43185/cama5_mpl3kv.webp"
       }
     ],
     "stock": 10

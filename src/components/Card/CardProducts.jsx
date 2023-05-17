@@ -55,7 +55,7 @@ const CardProducts = ({product}) => {
             <Typography
               gutterBottom
               variant='h5'
-              component='h2'
+              // component='h2'
               sx={{
                 fontSize: {
                   xs: '1.4em',
