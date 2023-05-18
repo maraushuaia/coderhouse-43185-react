@@ -4,19 +4,20 @@ import {
   Container,
   Grid,
   Typography,
-} from '@mui/material';
-import CartCounter from '../CartCounter/CartCounter';
-import {useParams} from 'react-router-dom';
-import useSearchProductID from '../hooks/useSearchProductID';
-import CardImages from '../Card/CardImages';
+} from "@mui/material";
+import CartCounter from "../CartCounter/CartCounter";
+import { useParams } from "react-router-dom";
+import CardImages from "../Card/CardImages";
+import useSearchProducts from "../hooks/useSearchProducts";
 
 const ItemDetailContainer = () => {
-  const {id} = useParams();
-  const {product, loading, error} = useSearchProductID(id);
+  const { id } = useParams();
+  console.log(id);
+  const { product, loading, error } = useSearchProducts(id);
 
   if (loading) {
     return (
-      <Box sx={{display: 'grid', justifyContent: 'center'}}>
+      <Box sx={{ display: "grid", justifyContent: "center" }}>
         <CircularProgress />
         loading...
       </Box>
@@ -28,38 +29,38 @@ const ItemDetailContainer = () => {
   }
 
   return (
-    <Container maxWidth='xl' sx={{mt: 4}}>
+    <Container maxWidth="xl" sx={{ mt: 4 }}>
       <Box
         sx={{
           marginBottom: 4,
-          backgroundColor: 'white',
-          borderRadius: '10px',
+          backgroundColor: "white",
+          borderRadius: "10px",
           mt: 2,
         }}
       >
-        <Typography variant='h5' sx={{my: 2, ml: 2}}>
+        <Typography variant="h5" sx={{ my: 2, ml: 2 }}>
           {product.name}
         </Typography>
         <Grid
           container
           sx={{
-            display: {xs: 'grid', sm: 'grid', md: 'flex'},
-            flexDirection: {xs: 'column', md: 'row'},
+            display: { xs: "grid", sm: "grid", md: "flex" },
+            flexDirection: { xs: "column", md: "row" },
             p: 2,
           }}
         >
           <Grid item xs={12} sm={12} md={12} lg={8}>
             <CardImages images={product.imageAditional} />
-            <Typography variant='span' sx={{my: 2}}>
+            <Typography variant="span" sx={{ my: 2 }}>
               {product.descriptionLong}
             </Typography>
           </Grid>
 
           <Grid item lg={4}>
             <Typography
-              variant='h6'
-              sx={{color: 'primary.main', mb: 2}}
-              ml={{xs: 0, sm: 3, md: 3, lg: 3}}
+              variant="h6"
+              sx={{ color: "primary.main", mb: 2 }}
+              ml={{ xs: 0, sm: 3, md: 3, lg: 3 }}
             >
               Precio ${product.price}
             </Typography>
@@ -68,19 +69,19 @@ const ItemDetailContainer = () => {
         </Grid>
 
         <Grid>
-          <Typography variant='h5' gutterBottom>
+          <Typography variant="h5" gutterBottom>
             Te puede interesar
           </Typography>
 
-          <Container maxWidth='lg'>
+          <Container maxWidth="lg">
             <Grid
               sx={{
-                width: '100%',
-                display: 'grid',
-                justifyContent: 'center',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
+                width: "100%",
+                display: "grid",
+                justifyContent: "center",
+                gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
               }}
-              gap={{xs: 1, sm: 6, md: 6, lg: 6}}
+              gap={{ xs: 1, sm: 6, md: 6, lg: 6 }}
               mb={3}
             >
               <h3>Acá irán los productos relacionados que se ofrecerán</h3>
