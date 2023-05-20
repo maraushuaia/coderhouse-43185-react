@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 
-const pages = ['informatica', 'muebles-decoracion', 'ropa-accesorios', 'ayuda'];
+const pages = ['categorias', 'muebles-decoracion', 'ropa-accesorios', 'ayuda'];
 
 const OptionMenu = () => {
   return (

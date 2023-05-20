@@ -1,11 +1,11 @@
-// import {useContext} from 'react';
-// import {ProductContext} from '../../contexts/ProductProvider';
+import {useContext} from 'react';
+import {ProductContext} from '../../contexts/ProviderProducts';
 
-// const useSearchProductsContext = () => {
-//   const {products} = useContext(ProductContext);
-//   console.log('Productos Recibidos en useSearchProductsContext: ', products);
+const useSearchProductsContext = () => {
+  const {products} = useContext(ProductContext);
+  console.log('Productos Recibidos en useSearchProductsContext: ', products);
 
-//   return products;
-// };
+  return products;
+};
 
-// export default useSearchProductsContext;
+export default useSearchProductsContext;

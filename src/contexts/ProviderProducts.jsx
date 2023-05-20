@@ -2,7 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 
 const ProductContext = createContext();
 
-const ProductProvider = ({children}) => {
+const ProviderProducts = ({children}) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,4 +35,4 @@ const ProductProvider = ({children}) => {
   );
 };
 
-export {ProductContext, ProductProvider};
+export {ProductContext, ProviderProducts};

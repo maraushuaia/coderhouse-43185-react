@@ -2,7 +2,7 @@
   {
     "id": 1,
     "status": "published",
-    "category": "informatica",
+    "category": "Informatica",
     "name": "Monitor",
     "descriptionshort": "27-inch monitor with 4K resolution",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -31,7 +31,7 @@
   {
     "id": 2,
     "status": "published",
-    "category": "informatica",
+    "category": "Informatica",
     "name": "Keyboard",
     "descriptionshort": "Mechanical keyboard with RGB lighting",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -60,7 +60,7 @@
   {
     "id": 3,
     "status": "published",
-    "category": "informatica",
+    "category": "Informatica",
     "name": "Mouse",
     "descriptionshort": "Wireless mouse with ergonomic design",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -89,7 +89,7 @@
   {
     "id": 4,
     "status": "published",
-    "category": "informatica",
+    "category": "Informatica",
     "name": "Headphones",
     "descriptionshort": "Noise-cancelling headphones with Bluetooth connectivity",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -118,7 +118,7 @@
   {
     "id": 5,
     "status": "published",
-    "category": "muebles-decoracion",
+    "category": "Vehículos",
     "name": "Vehiculos",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -147,7 +147,7 @@
   {
     "id": 6,
     "status": "published",
-    "category": "muebles-decoracion",
+    "category": "Muebles y Decoración",
     "name": "Cama",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -176,7 +176,7 @@
   {
     "id": 7,
     "status": "published",
-    "category": "ropa-accesorios",
+    "category": "Informatica",
     "name": "Laptop",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
@@ -205,7 +205,7 @@
   {
     "id": 8,
     "status": "published",
-    "category": "muebles-decoracion",
+    "category": "Muebles y Decoración",
     "name": "Cama",
     "descriptionshort": "Powerful laptop with 16GB RAM and 512GB SSD",
     "descriptionLong": "Powerful laptop with 16GB RAM and 512GB SSD es un producto recién lanzado al mercado de Asia",
