@@ -1,7 +1,3 @@
-// Este componente recibe los productos que le envía ItemListContainer y los muestra en una grilla de productos
-// Componente hijo de ItemListContainer
-// Padre de CardProducts
-
 import {Box, CircularProgress, Container, Typography} from '@mui/material';
 import CardProducts from '../Card/CardProducts';
 import {Link} from 'react-router-dom';
@@ -13,7 +9,7 @@ const ItemListContainerView = ({products, loading}) => {
         Lista de productos
       </Typography>
 
-      {products.length === 0 ? (
+      {loading ? (
         <Box sx={{display: 'grid', justifyContent: 'center'}}>
           <CircularProgress />
           loading...
@@ -32,9 +28,8 @@ const ItemListContainerView = ({products, loading}) => {
           mb={2}
           gap={{xs: 1.5, sm: 2, md: 3, lg: 4}}
         >
-          {products.map(
-            (product) => (
-              // product.status === 'published' ? (
+          {products && products.length > 0 ? (
+            products.map((product) => (
               <Link
                 key={product.id}
                 to={`/itemDetail/${product.id}`}
@@ -42,14 +37,15 @@ const ItemListContainerView = ({products, loading}) => {
               >
                 <CardProducts product={product} />
               </Link>
-            )
-
-            // ) : null
+            ))
+          ) : (
+            <Typography variant='body1'>
+              No hay productos disponibles
+            </Typography>
           )}
         </Box>
       )}
     </Container>
   );
 };
-
 export default ItemListContainerView;

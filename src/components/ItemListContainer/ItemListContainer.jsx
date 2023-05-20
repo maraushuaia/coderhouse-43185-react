@@ -1,11 +1,11 @@
 import ItemListContainerView from './ItemListContainerView';
-import useSearchProducts from '../hooks/useSearchProducts';
+import {ProductContext} from '../../contexts/ProductProvider';
+import {useContext} from 'react';
 
 const ItemListContainer = () => {
-  // En esta sección busco los productos en la API usando useSearchProducts
-  const {products, loading} = useSearchProducts();
+  const {products, isLoading} = useContext(ProductContext);
 
-  return <ItemListContainerView products={products} loading={loading} />;
+  return <ItemListContainerView products={products} loading={isLoading} />;
 };
 
 export default ItemListContainer;

@@ -6,12 +6,12 @@ import BarMobile from '../components/Navbar/BarMobile';
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 import HomePage from '../pages/Home';
 import ItemListFiltered from '../components/ItemListFilter/ItemListFiltered';
-import GlobalProvider from '../context/GlobalProvider';
+import {ProductProvider} from '../contexts/ProductProvider';
 
 const Rutas = () => {
   return (
     <BrowserRouter>
-      <GlobalProvider>
+      <ProductProvider>
         <NavbarRender />
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -20,7 +20,7 @@ const Rutas = () => {
         </Routes>
         <Footer />
         <BarMobile />
-      </GlobalProvider>
+      </ProductProvider>
     </BrowserRouter>
   );
 };
