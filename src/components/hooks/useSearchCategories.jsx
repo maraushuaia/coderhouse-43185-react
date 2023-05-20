@@ -1,19 +1,19 @@
-import {useEffect, useState} from 'react';
-import useSearchProductsContext from './useSearchProductsContext';
+import {useEffect, useContext} from 'react';
+import {ProductContext} from './ProviderProducts';
+import {CategoriesContext} from './ProviderCategories';
 
 const useSearchCategories = () => {
-  const products = useSearchProductsContext();
-  const [categoriasUnicas, setCategoriasUnicas] = useState([]);
+  const {products} = useContext(ProductContext);
+  const [, setCategories] = useContext(CategoriesContext);
 
   useEffect(() => {
     const uniqueCategories = Array.from(
       new Set(products.map((product) => product.category))
     );
-    setCategoriasUnicas(uniqueCategories);
-  }, [products]);
-  console.log('CATEGORIAS UNICAS: ', categoriasUnicas);
+    setCategories(uniqueCategories);
+  }, [products, setCategories]);
 
-  return categoriasUnicas;
+  return null; // No se renderiza nada en este componente, solo se actualiza el estado de ProviderCategories
 };
 
 export default useSearchCategories;

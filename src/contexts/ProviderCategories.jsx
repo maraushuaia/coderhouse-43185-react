@@ -1,14 +1,15 @@
-import React from 'react';
+// ProviderCategories.jsx
+import React, {createContext, useState} from 'react';
 
-import {ProviderProducts} from './ProviderProducts';
-import useSearchCategories from '../components/hooks/useSearchCategories';
+export const CategoriesContext = createContext();
 
 const ProviderCategories = ({children}) => {
-  const categories = useSearchCategories();
-  console.log('CATEGORIAS EN GLOBAL PROVIDER: ', categories);
+  const [categories, setCategories] = useState([]);
 
   return (
-    <ProviderProducts categories={categories}>{children}</ProviderProducts>
+    <CategoriesContext.Provider value={[categories, setCategories]}>
+      {children}
+    </CategoriesContext.Provider>
   );
 };
 
