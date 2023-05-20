@@ -1,6 +1,3 @@
-// Componente que renderiza imagenes de un producto en particular
-// Componente hijo de ItemDetailContainer
-
 import React, {useState} from 'react';
 import {Box, Grid} from '@mui/material';
 
@@ -17,13 +14,13 @@ const CardImages = ({images}) => {
         sx={{
           display: {md: 'flex'},
           mb: 2,
+          justifyContent: 'center',
         }}
-        item
-        xs={10}
+        ml={{xs: 0, sm: 3, md: 3, lg: 3}}
         flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
       >
         <Box
-          width={{xs: '290px', sm: '370px', md: '800px', lg: '800px'}}
+          width={{xs: '100%', sm: '370px', md: '800px', lg: '800px'}}
           height={{xs: '340px', sm: '400px', md: '620px', lg: '620px'}}
           sx={{
             backgroundImage: `url(${selectedImage.url})`,
@@ -32,12 +29,19 @@ const CardImages = ({images}) => {
             borderRadius: '4px',
           }}
         />
-        <Grid item xs={2}>
+
+        <Grid item xs={12} sm={8} md={8} lg={2} xl={2}>
           <Box
             sx={{
-              display: {xs: 'inline-flex', md: 'flex', lg: 'flex'},
-              flexDirection: {xs: 'row', md: 'column', lg: 'colum'},
-              alignItems: 'flex-start',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              flexDirection: {
+                xs: 'row',
+                md: 'column',
+                lg: 'column',
+              },
+              alignItems: 'center',
             }}
           >
             {images.map((image, index) => (

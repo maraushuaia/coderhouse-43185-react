@@ -5,6 +5,7 @@ import {
   Select,
   MenuItem,
   Container,
+  Typography,
 } from '@mui/material';
 
 const ItemListContainerFilter = ({categories, onCategoryChange}) => {
@@ -18,8 +19,10 @@ const ItemListContainerFilter = ({categories, onCategoryChange}) => {
 
   return (
     <Container maxWidth='xs'>
-      <FormControl fullWidth sx={{mt: 3}}>
-        <InputLabel id='category-label'>Select a category</InputLabel>
+      <FormControl fullWidth sx={{mt: 3}} alignItems='center'>
+        <Typography variant='h6' noWrap component='div'>
+          Filtrar por categoría
+        </Typography>
         <Select
           labelId='category-label'
           id='category'
@@ -38,44 +41,3 @@ const ItemListContainerFilter = ({categories, onCategoryChange}) => {
 };
 
 export default ItemListContainerFilter;
-
-// import React, {useState} from 'react';
-// import {
-//   FormControl,
-//   InputLabel,
-//   Select,
-//   MenuItem,
-//   Container,
-// } from '@mui/material';
-
-// const ItemListContainerFilter = ({categories, onCategoryChange}) => {
-//   const [selectedCategory, setSelectedCategory] = useState('');
-
-//   const handleCategoryChange = (event) => {
-//     const category = event.target.value;
-//     setSelectedCategory(category);
-//     onCategoryChange(category);
-//   };
-
-//   return (
-//     <Container maxWidth='xs'>
-//       <FormControl fullWidth sx={{mt: 3}}>
-//         <InputLabel id='category-label'>Select a category</InputLabel>
-//         <Select
-//           labelId='category-label'
-//           id='category'
-//           value={selectedCategory}
-//           onChange={handleCategoryChange}
-//         >
-//           {categories.map((category) => (
-//             <MenuItem key={category.id} value={category.id}>
-//               {category.name}
-//             </MenuItem>
-//           ))}
-//         </Select>
-//       </FormControl>
-//     </Container>
-//   );
-// };
-
-// export default ItemListContainerFilter;

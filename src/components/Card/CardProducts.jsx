@@ -46,70 +46,73 @@ const CardProducts = ({product}) => {
   };
 
   return (
-    <CardActionArea
+    <Box
       key={product.id}
       sx={{
         display: 'flex',
         flexDirection: 'column',
         boxShadow: 5,
+        maxWidth: '220px',
       }}
     >
-      <Card sx={{flexGrow: 1}}>
-        <CardMedia
-          component='img'
-          image={product.imageMain}
-          alt={product.name}
-          sx={{
-            objectFit: 'contain',
-            height: imageHeight,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        />
-
-        <CardContent sx={{flexGrow: 1}}>
-          <Box
+      <CardActionArea sx={{maxWidth: '220px'}}>
+        <Card sx={{flexGrow: 1}}>
+          <CardMedia
+            component='img'
+            image={product.imageMain}
+            alt={product.name}
             sx={{
-              height: titleHeight,
+              objectFit: 'contain',
+              height: imageHeight,
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
             }}
-          >
-            <Typography
-              gutterBottom
-              variant='h5'
+          />
+
+          <CardContent sx={{flexGrow: 1}}>
+            <Box
               sx={{
-                fontSize: titleFontSize,
+                height: titleHeight,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              {product.name}
-            </Typography>
-          </Box>
+              <Typography
+                gutterBottom
+                variant='h5'
+                sx={{
+                  fontSize: titleFontSize,
+                }}
+              >
+                {product.name}
+              </Typography>
+            </Box>
 
-          <Box sx={{height: descriptionHeight}}>
-            <Typography variant='body2' color='text.secondary'>
-              {product.descriptionshort}
-            </Typography>
-          </Box>
-          <Divider />
-          <Box
-            sx={{
-              height: priceHeight,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              pt: {xs: 3.5, sm: 1, md: 1, lg: 1},
-            }}
-          >
-            <Typography gutterBottom variant='h6' component='div'>
-              ${product.price}
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-    </CardActionArea>
+            <Box sx={{height: descriptionHeight}}>
+              <Typography variant='body2' color='text.secondary'>
+                {product.descriptionshort}
+              </Typography>
+            </Box>
+            <Divider />
+            <Box
+              sx={{
+                height: priceHeight,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                pt: {xs: 3.5, sm: 1, md: 1, lg: 1},
+              }}
+            >
+              <Typography gutterBottom variant='h6' component='div'>
+                ${product.price}
+              </Typography>
+            </Box>
+          </CardContent>
+        </Card>
+      </CardActionArea>
+    </Box>
   );
 };
 

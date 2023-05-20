@@ -23,10 +23,11 @@ const ErrorInfo = () => {
         width={200}
         height={200}
       />
+
       <Typography variant='h6' component='h6' align='center'>
-        Ha fallado la conexión al servidor
+        Falló la conexión al servidor
       </Typography>
-      <Button variant='contained' color='primary' onClick={handleGoHome}>
+      <Button variant='contained' color='secondary' onClick={handleGoHome}>
         Inicio
       </Button>
     </Box>

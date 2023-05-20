@@ -19,6 +19,8 @@ const ItemListContainerView = ({products, loading}) => {
           sx={{
             display: 'grid',
           }}
+          // gridTemplateColumns='repeat(auto-fit, minmax(220px, 1fr))'
+          // gap={2}
           gridTemplateColumns={{
             xs: 'repeat(auto-fit, minmax(140px, 1fr))',
             sm: 'repeat(auto-fit, minmax(150px, 1fr))',

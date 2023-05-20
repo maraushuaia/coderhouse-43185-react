@@ -1,13 +1,13 @@
 import {Box} from '@mui/material';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import Typography from '@mui/material/Typography';
 import {Link} from 'react-router-dom';
+import StoreIcon from '@mui/icons-material/Store';
 
 const Logo = () => {
   return (
     <Link to={'/'} style={{color: 'white', textDecoration: 'none'}}>
       <Box sx={{display: {sm: 'flex'}, alignItems: 'center'}}>
-        <LocalShippingIcon
+        <StoreIcon
           sx={{
             display: {xs: 'none', sm: 'block'},
             marginRight: '.5em',
@@ -28,7 +28,7 @@ const Logo = () => {
           marginRight={'2.5em'}
           color={'#fff'}
         >
-          CATERPILAR
+          EXPLORA
         </Typography>
       </Box>
     </Link>

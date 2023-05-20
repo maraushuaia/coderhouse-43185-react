@@ -8,7 +8,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const CartWidgetView = ({color}) => {
   return (
     <div>
-      <Badge badgeContent={3} color='info' sx={{mr: 2}}>
+      <Badge badgeContent={3} color='info'>
         <ShoppingCartIcon color={color} />
       </Badge>
     </div>

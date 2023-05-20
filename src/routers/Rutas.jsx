@@ -12,6 +12,7 @@ import OfferPage from '../pages/OfferPage';
 import FavoritesPage from '../pages/FavoritesPage';
 import HelpPage from '../pages/HelpPage';
 import NotificationsPage from '../pages/NotificationsPage';
+import UserView from '../components/User/UserView';
 
 const Rutas = () => {
   return (
@@ -26,6 +27,8 @@ const Rutas = () => {
             <Route path='/favoritos' element={<FavoritesPage />} />
             <Route path='/ayuda' element={<HelpPage />} />
             <Route path='/notificaciones' element={<NotificationsPage />} />
+            {/* <Route path='/cart' element={<NotificationsPage />} /> */}
+            <Route path='/user' element={<UserView />} />
             <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
           </Routes>
           <Footer />

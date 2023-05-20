@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
           mt: 2,
         }}
       >
-        <Typography variant='h5' sx={{my: 2, ml: 2}}>
+        <Typography variant='h5' sx={{ml: 2, mb: 2}}>
           {product.name}
         </Typography>
         <Grid
@@ -45,12 +45,11 @@ const ItemDetailContainer = () => {
           sx={{
             display: {xs: 'grid', sm: 'grid', md: 'flex'},
             flexDirection: {xs: 'column', md: 'row'},
-            p: 2,
           }}
         >
           <Grid item xs={12} sm={12} md={12} lg={8}>
             <CardImages images={product.imageAditional} />
-            <Typography variant='span' sx={{my: 2}}>
+            <Typography variant='span' sx={{ml: 2, mr: 2}}>
               {product.descriptionLong}
             </Typography>
           </Grid>
