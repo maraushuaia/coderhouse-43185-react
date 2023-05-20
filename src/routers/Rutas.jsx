@@ -8,6 +8,10 @@ import HomePage from '../pages/HomePage';
 import CategoriesPage from '../pages/CategoriesPage';
 import {ProviderProducts} from '../contexts/ProviderProducts';
 import ProviderCategories from '../contexts/ProviderCategories';
+import OfferPage from '../pages/OfferPage';
+import FavoritesPage from '../pages/FavoritesPage';
+import HelpPage from '../pages/HelpPage';
+import NotificationsPage from '../pages/NotificationsPage';
 
 const Rutas = () => {
   return (
@@ -18,8 +22,11 @@ const Rutas = () => {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/categorias' element={<CategoriesPage />} />
+            <Route path='/ofertas' element={<OfferPage />} />
+            <Route path='/favoritos' element={<FavoritesPage />} />
+            <Route path='/ayuda' element={<HelpPage />} />
+            <Route path='/notificaciones' element={<NotificationsPage />} />
             <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
-            {/* <Route path='/:category' element={<ItemListFiltered />} /> */}
           </Routes>
           <Footer />
           <BarMobile />
