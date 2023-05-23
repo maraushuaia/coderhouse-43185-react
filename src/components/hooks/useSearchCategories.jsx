@@ -1,9 +1,9 @@
-import {useEffect, useContext} from 'react';
-import {ProductContext} from './ProviderProducts';
-import {CategoriesContext} from './ProviderCategories';
+import { useEffect, useContext } from "react";
+import { ProductContext } from "./ProviderProducts";
+import { CategoriesContext } from "./ProviderCategories";
 
 const useSearchCategories = () => {
-  const {products} = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
   const [, setCategories] = useContext(CategoriesContext);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const useSearchCategories = () => {
     setCategories(uniqueCategories);
   }, [products, setCategories]);
 
-  return null; // No se renderiza nada en este componente, solo se actualiza el estado de ProviderCategories
+  return null;
 };
 
 export default useSearchCategories;

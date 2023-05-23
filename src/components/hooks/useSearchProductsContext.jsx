@@ -1,9 +1,8 @@
-import {useContext} from 'react';
-import {ProductContext} from '../../contexts/ProviderProducts';
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/ProviderProducts";
 
 const useSearchProductsContext = () => {
-  const {products} = useContext(ProductContext);
-  console.log('Productos Recibidos en useSearchProductsContext: ', products);
+  const { products } = useContext(ProductContext);
 
   return products;
 };
