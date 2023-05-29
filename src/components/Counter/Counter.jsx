@@ -1,16 +1,11 @@
-//Objetivos del Componente
-//El componente muestra un contador con botones para incrementar y decrementar el valor del contador
-//El componente recibira un parametro para indicar el valor inicial del contador
-//El componente recibira un parametro para indicar el valor maximo del contador
-//Agregar un boton para resetear el contador a su valor inicial
-//Mostrar el valor actual del contador
-
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Box, Button, Container, Typography} from '@mui/material';
 import {Add, Remove} from '@mui/icons-material';
+import {CartContext} from '../../contexts/ContextCartWidget';
 
-const CartCounter = ({stock}) => {
+const Counter = ({stock, idProduct, productData}) => {
   const [count, setCount] = useState(1);
+  const {addToCart} = useContext(CartContext);
 
   const handleAdd = () => {
     if (count < stock) {
@@ -22,6 +17,11 @@ const CartCounter = ({stock}) => {
     if (count > 1) {
       setCount(count - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    addToCart(idProduct, count, productData); // Agregar el producto al carrito con la cantidad actual
+    console.log('Producto agregado al carrito ', productData);
   };
 
   return (
@@ -57,7 +57,7 @@ const CartCounter = ({stock}) => {
         </Box>
 
         <Box>
-          <Button variant='outlined' size='medium' onClick={handleSubtract}>
+          <Button variant='outlined' size='medium' onClick={handleAddToCart}>
             Agregar al Carrito
           </Button>
         </Box>
@@ -66,4 +66,4 @@ const CartCounter = ({stock}) => {
   );
 };
 
-export default CartCounter;
+export default Counter;

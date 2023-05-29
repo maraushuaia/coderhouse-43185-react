@@ -3,7 +3,7 @@ import React, {createContext, useState} from 'react';
 
 export const CategoriesContext = createContext();
 
-const ProviderCategories = ({children}) => {
+const ContextCategories = ({children}) => {
   const [categories, setCategories] = useState([]);
 
   return (
@@ -13,4 +13,4 @@ const ProviderCategories = ({children}) => {
   );
 };
 
-export default ProviderCategories;
+export default ContextCategories;

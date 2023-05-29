@@ -2,7 +2,7 @@ import {Box} from '@mui/material';
 import React from 'react';
 
 const OfferPage = () => {
-  return <Box sx={{mt: 6}}>OfferPage</Box>;
+  return <Box minHeight={'80vh'}>Offer Page</Box>;
 };
 
 export default OfferPage;

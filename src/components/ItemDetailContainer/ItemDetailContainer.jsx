@@ -5,10 +5,10 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import CartCounter from '../CartCounter/CartCounter';
 import {useParams} from 'react-router-dom';
-import useSearchProductID from '../hooks/useSearchProductID';
+import useSearchProductID from '../../hooks/useSearchProductID';
 import CardImages from '../Card/CardImages';
+import Counter from '../Counter/Counter';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
@@ -62,7 +62,11 @@ const ItemDetailContainer = () => {
             >
               Precio ${product.price}
             </Typography>
-            <CartCounter stock={product.stock} />
+            <Counter
+              stock={product.stock}
+              idProduct={id}
+              productData={product}
+            />
           </Grid>
         </Grid>
 
