@@ -17,7 +17,7 @@ const NewFooter = () => {
         fontSize: '1em',
       }}
     >
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid item xs={6} sm={3} style={{textAlign: 'center'}}>
           <div>
             <Link to='/categorias'>Categorías</Link>

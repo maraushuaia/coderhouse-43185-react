@@ -7,7 +7,7 @@ import Rutas from './routers/Rutas';
 
 function App() {
   return (
-    <Box sx={{mb: 8}}>
+    <Box>
       <Rutas />
     </Box>
   );
