@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import NavbarRender from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
+import FooterFixer from '../components/Footer/FooterFixer';
 import BarMobile from '../components/Navbar/BarMobile';
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 import HomePage from '../pages/HomePage';
@@ -15,7 +15,7 @@ import ContextCartWidget from '../contexts/ContextCartWidget';
 import ContextCategories from '../contexts/ContextCategories';
 import {ContextProducts} from '../contexts/ContextProducts';
 import Cart from '../components/Cart/Cart';
-import NewFooter from '../components/Footer/NewFooter';
+import Footer from '../components/Footer/Footer';
 
 const Rutas = () => {
   return (
@@ -35,8 +35,8 @@ const Rutas = () => {
               <Route path='/user' element={<UserView />} />
               <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
             </Routes>
-            <NewFooter />
             <Footer />
+            <FooterFixer />
             <BarMobile />
           </ContextCartWidget>
         </ContextCategories>
