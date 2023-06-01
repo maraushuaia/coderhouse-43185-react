@@ -59,6 +59,8 @@ const ItemDetailContainer = () => {
               variant='h6'
               sx={{color: 'primary.main', mb: 2}}
               ml={{xs: 0, sm: 3, md: 3, lg: 3}}
+              textAlign={'center'}
+              marginTop={{xs: 3, sm: 0, md: 0, lg: 0}}
             >
               Precio ${product.price}
             </Typography>

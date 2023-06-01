@@ -16,6 +16,7 @@ import ContextCategories from '../contexts/ContextCategories';
 import {ContextProducts} from '../contexts/ContextProducts';
 import Cart from '../components/Cart/Cart';
 import Footer from '../components/Footer/Footer';
+import Error404 from '../pages/Error404';
 
 const Rutas = () => {
   return (
@@ -34,6 +35,7 @@ const Rutas = () => {
               <Route path='/cart' element={<Cart />} />
               <Route path='/user' element={<UserView />} />
               <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
+              <Route path='*' element={<Error404 />} />
             </Routes>
             <Footer />
             <FooterFixer />

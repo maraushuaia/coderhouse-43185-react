@@ -4,15 +4,27 @@ import {IconButton, Grid, Typography} from '@mui/material';
 import {Instagram, YouTube, Facebook, WhatsApp} from '@mui/icons-material';
 
 const Footer = () => {
+  const accessLinks = [
+    {to: '/categorias', label: 'Categorías'},
+    {to: '/ofertas', label: 'Ofertas'},
+    {to: '/favoritos', label: 'Favoritos'},
+    {to: '/ayuda', label: 'Ayuda'},
+  ];
+
+  const privacyLinks = [
+    {to: '/terminos', label: 'Términos y Condiciones'},
+    {to: '/privacidad', label: 'Política de Privacidad'},
+  ];
+
   return (
     <footer
       style={{
-        marginTop: '5em',
-        height: '20em',
+        marginTop: '7em',
+        paddingTop: '3em',
+        paddingBottom: '7em',
         background: 'linear-gradient(to right, #9c27b0, #b28035)',
-        paddingLeft: '1.5em',
-        paddingRight: '1.5em',
-        paddingTop: '2em',
+        paddingLeft: '1em',
+        paddingRight: '1em',
         color: '#fff',
         fontSize: '1em',
       }}
@@ -21,21 +33,20 @@ const Footer = () => {
         container
         flexDirection={{xs: 'column', md: 'row'}}
         alignContent={'center'}
+        gap={{xs: 3, md: 0}}
       >
         <Grid item xs={6} sm={3} style={{textAlign: 'center'}}>
           <Typography variant='h6'>Accesos</Typography>
-          <div>
-            <Link to='/categorias'>Categorías</Link>
-          </div>
-          <div>
-            <Link to='/ofertas'>Ofertas</Link>
-          </div>
-          <div>
-            <Link to='/favoritos'>Favoritos</Link>
-          </div>
-          <div>
-            <Link to='/ayuda'>Ayuda</Link>
-          </div>
+          {accessLinks.map((link, index) => (
+            <div key={index}>
+              <Link
+                to={link.to}
+                style={{textDecoration: 'none', color: 'white'}}
+              >
+                {link.label}
+              </Link>
+            </div>
+          ))}
         </Grid>
         <Grid item xs={6} sm={3} style={{textAlign: 'center'}}>
           <Typography variant='h6'>Dirección</Typography>
@@ -49,11 +60,16 @@ const Footer = () => {
         </Grid>
         <Grid item xs={6} sm={3} style={{textAlign: 'center'}}>
           <Typography variant='h6'>Privacidad</Typography>
-          <div>
-            <Link to='/terminos'>Términos y Condiciones</Link>
-            <br />
-            <Link to='/privacidad'>Política de Privacidad</Link>
-          </div>
+          {privacyLinks.map((link, index) => (
+            <div key={index}>
+              <Link
+                to={link.to}
+                style={{textDecoration: 'none', color: 'white'}}
+              >
+                {link.label}
+              </Link>
+            </div>
+          ))}
         </Grid>
         <Grid item xs={6} sm={3}>
           <div style={{textAlign: 'center'}}>

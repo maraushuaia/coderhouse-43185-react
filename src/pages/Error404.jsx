@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Box, Button, Typography} from '@mui/material';
 
-const ErrorInfo = () => {
+const Error404 = () => {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
@@ -18,20 +18,20 @@ const ErrorInfo = () => {
       minHeight='80vh'
     >
       <img
-        src='https://res.cloudinary.com/dtvrg3by2/image/upload/v1684595213/react43185/503_Error_Service_Unavailable-cuate_nnvdjv.png'
+        src='https://res.cloudinary.com/dtvrg3by2/image/upload/v1685589844/react43185/404_Error_with_a_cute_animal-amico_fd58yv.png'
         alt='Error'
         width={340}
         height={340}
       />
 
       <Typography variant='h6' component='h6' align='center'>
-        Falló la conexión al servidor
+        Página no encontrada
       </Typography>
       <Button variant='contained' color='secondary' onClick={handleGoHome}>
-        Inicio
+        Ir a Inicio
       </Button>
     </Box>
   );
 };
 
-export default ErrorInfo;
+export default Error404;
