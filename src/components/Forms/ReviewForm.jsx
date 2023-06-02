@@ -1,75 +1,135 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Grid from '@mui/material/Grid';
+import React, { useContext } from "react";
+import { CartContext } from "../../contexts/ContextCartWidget";
+import {
+  Typography,
+  Grid,
+  Paper,
+  Card,
+  CardContent,
+  IconButton,
+} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const products = [
-  {name: 'Product 1', desc: 'A nice thing', price: '$9.99'},
-  {name: 'Product 2', desc: 'Another thing', price: '$3.45'},
-  {name: 'Product 3', desc: 'Something else', price: '$6.51'},
-  {name: 'Product 4', desc: 'Best thing of all', price: '$14.11'},
-  {name: 'Shipping', desc: '', price: 'Free'},
-];
-const addresses = [
-  '1 Material-UI Drive',
-  'Reactville',
-  'Anytown',
-  '99999',
-  'USA',
-];
-const payments = [
-  {name: 'Card type', detail: 'Visa'},
-  {name: 'Card holder', detail: 'Mr John Smith'},
-  {name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234'},
-  {name: 'Expiry date', detail: '04/2024'},
-];
+const ReviewForm = ({ formData }) => {
+  const { cartProducts, getTotalPrice, removeFromCart } =
+    useContext(CartContext);
 
-const ReviewForm = () => {
+  const {
+    firstName,
+    lastName,
+    address,
+    phone,
+    city,
+    zip,
+    country,
+    state,
+    cardName,
+    cardNumber,
+    cvv,
+    expDate,
+  } = formData;
+
+  const totalPrice = getTotalPrice();
+
   return (
     <React.Fragment>
-      <Typography variant='h6' gutterBottom my={2}>
-        Resumen del Pedido Compra
+      <Typography variant="h6" gutterBottom my={2}>
+        Resumen de la Compra
       </Typography>
-      <List disablePadding>
-        {products.map((product) => (
-          <ListItem key={product.name}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant='body2'>{product.price}</Typography>
-          </ListItem>
-        ))}
-        <ListItem>
-          <ListItemText primary='Total' />
-          <Typography variant='subtitle1' fontWeight='bold'>
-            $34.06
-          </Typography>
-        </ListItem>
-      </List>
+
+      <Grid container spacing={2} maxWidth="xl">
+        <Grid item xs={12} md={12} lg={12}>
+          <Paper sx={{ p: 2 }}>
+            <Grid container alignItems="center">
+              <Grid item xs={4}>
+                <Typography variant="subtitle1">Producto</Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography variant="subtitle1">Cantidad</Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography variant="subtitle1">Precio</Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography variant="subtitle1">SubTotal</Typography>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography variant="subtitle1">Acción</Typography>
+              </Grid>
+            </Grid>
+            {cartProducts.map((elemento) => (
+              <Card key={elemento.id} style={{ margin: "10px 0" }}>
+                <CardContent>
+                  <Grid container alignItems="center">
+                    <Grid item xs={4}>
+                      <Typography>{elemento.name}</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography>{elemento.quantity}</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography>${elemento.price}</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography>
+                        ${(elemento.price * elemento.quantity).toFixed(2)}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <IconButton onClick={() => removeFromCart(elemento.id)}>
+                        <DeleteIcon />
+                      </IconButton>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            ))}
+          </Paper>
+        </Grid>
+      </Grid>
+
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
-          <Typography variant='h6' gutterBottom>
-            Shipping
+          <Typography variant="h6" gutterBottom>
+            Enviar a
           </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
+          <Typography gutterBottom>
+            {firstName} {lastName}
+          </Typography>
+          <Typography gutterBottom>{address}</Typography>
+          <Typography gutterBottom>
+            {city}, {zip}
+          </Typography>
+          <Typography gutterBottom>{country}</Typography>
         </Grid>
-        <Grid item container direction='column' xs={12} sm={6}>
-          <Typography variant='h6' gutterBottom>
-            Payment details
+
+        <Grid item container direction="column" xs={12} sm={6}>
+          <Typography variant="h6" gutterBottom>
+            Detalles del Pago
           </Typography>
           <Grid container>
-            {payments.map((payment) => (
-              <React.Fragment key={payment.name}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.name}</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom>{payment.detail}</Typography>
-                </Grid>
-              </React.Fragment>
-            ))}
+            <Grid item xs={3}>
+              <Typography gutterBottom>Nombre Tarjeta:</Typography>
+              <Typography gutterBottom>Numero Tarjeta:</Typography>
+              <Typography gutterBottom>Vencimiento:</Typography>
+              <Typography gutterBottom>CVV:</Typography>
+            </Grid>
+            <Grid item xs={9}>
+              <Typography gutterBottom>{cardName}</Typography>
+              <Typography gutterBottom>{cardNumber}</Typography>
+              <Typography gutterBottom>{expDate}</Typography>
+              <Typography gutterBottom>{cvv}</Typography>
+            </Grid>
           </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h6" gutterBottom>
+            Resumen del Pedido
+          </Typography>
+          <Typography gutterBottom>Total: ${totalPrice.toFixed(2)}</Typography>
         </Grid>
       </Grid>
     </React.Fragment>
