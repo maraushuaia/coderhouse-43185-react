@@ -50,6 +50,11 @@ const Cart = () => {
     );
   }
 
+  const handleCheckout = () => {
+    // Lógica para iniciar el proceso de checkout
+    navigate('/checkout'); // Navegar a la página de checkout
+  };
+
   return (
     <Box
       style={{
@@ -127,7 +132,12 @@ const Cart = () => {
                 }}
               >
                 <Grid item xs={6} sm={6} md={4} lg={6} xl={6} m={2}>
-                  <Button variant='contained' color='primary' fullWidth>
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    fullWidth
+                    onClick={handleCheckout}
+                  >
                     Finalizar Compra
                   </Button>
                 </Grid>

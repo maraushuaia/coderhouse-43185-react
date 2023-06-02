@@ -17,6 +17,7 @@ import {ContextProducts} from '../contexts/ContextProducts';
 import Cart from '../components/Cart/Cart';
 import Footer from '../components/Footer/Footer';
 import Error404 from '../pages/Error404';
+import CheckoutPage from '../pages/CheckoutPage';
 
 const Rutas = () => {
   return (
@@ -33,6 +34,7 @@ const Rutas = () => {
               <Route path='/ayuda' element={<HelpPage />} />
               <Route path='/notificaciones' element={<NotificationsPage />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<CheckoutPage />} />
               <Route path='/user' element={<UserView />} />
               <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
               <Route path='*' element={<Error404 />} />
