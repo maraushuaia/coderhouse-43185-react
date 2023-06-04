@@ -188,7 +188,7 @@ const CheckoutPage = () => {
                       <Button onClick={handleBack}>Atrás</Button>
                     </Grid>
                   )}
-                  <Grid item>
+                  <Grid item mr={2}>
                     <Button
                       variant='contained'
                       color='secondary'
