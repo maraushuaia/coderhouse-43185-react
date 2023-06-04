@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { CartContext } from "../../contexts/ContextCartWidget";
+import React, {useContext} from 'react';
+import {CartContext} from '../../contexts/ContextCartWidget';
 import {
   Typography,
   Grid,
@@ -7,60 +7,44 @@ import {
   Card,
   CardContent,
   IconButton,
-} from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const ReviewForm = ({ formData }) => {
-  const { cartProducts, getTotalPrice, removeFromCart } =
-    useContext(CartContext);
-
-  const {
-    firstName,
-    lastName,
-    address,
-    phone,
-    city,
-    zip,
-    country,
-    state,
-    cardName,
-    cardNumber,
-    cvv,
-    expDate,
-  } = formData;
+const ReviewForm = ({shippingAddress, paymentData}) => {
+  const {cartProducts, getTotalPrice, removeFromCart} = useContext(CartContext);
 
   const totalPrice = getTotalPrice();
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom my={2}>
+      <Typography variant='h6' gutterBottom my={2}>
         Resumen de la Compra
       </Typography>
 
-      <Grid container spacing={2} maxWidth="xl">
+      <Grid container spacing={2} maxWidth='xl'>
         <Grid item xs={12} md={12} lg={12}>
-          <Paper sx={{ p: 2 }}>
-            <Grid container alignItems="center">
+          <Paper sx={{p: 2}}>
+            <Grid container alignItems='center'>
               <Grid item xs={4}>
-                <Typography variant="subtitle1">Producto</Typography>
+                <Typography variant='subtitle1'>Producto</Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subtitle1">Cantidad</Typography>
+                <Typography variant='subtitle1'>Cantidad</Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subtitle1">Precio</Typography>
+                <Typography variant='subtitle1'>Precio</Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subtitle1">SubTotal</Typography>
+                <Typography variant='subtitle1'>SubTotal</Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subtitle1">Acción</Typography>
+                <Typography variant='subtitle1'>Acción</Typography>
               </Grid>
             </Grid>
             {cartProducts.map((elemento) => (
-              <Card key={elemento.id} style={{ margin: "10px 0" }}>
+              <Card key={elemento.id} style={{margin: '10px 0'}}>
                 <CardContent>
-                  <Grid container alignItems="center">
+                  <Grid container alignItems='center'>
                     <Grid item xs={4}>
                       <Typography>{elemento.name}</Typography>
                     </Grid>
@@ -89,22 +73,22 @@ const ReviewForm = ({ formData }) => {
       </Grid>
 
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom>
+        <Grid item xs={12} sm={6} mt={2}>
+          <Typography variant='h6' gutterBottom>
             Enviar a
           </Typography>
           <Typography gutterBottom>
-            {firstName} {lastName}
+            {shippingAddress.firstName} {shippingAddress.lastName}
           </Typography>
-          <Typography gutterBottom>{address}</Typography>
+          <Typography gutterBottom>{shippingAddress.address}</Typography>
           <Typography gutterBottom>
-            {city}, {zip}
+            {shippingAddress.city}, {shippingAddress.zip}
           </Typography>
-          <Typography gutterBottom>{country}</Typography>
+          <Typography gutterBottom>{shippingAddress.country}</Typography>
         </Grid>
 
-        <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom>
+        <Grid item container direction='column' xs={12} sm={6} mt={2}>
+          <Typography variant='h6' gutterBottom>
             Detalles del Pago
           </Typography>
           <Grid container>
@@ -115,10 +99,10 @@ const ReviewForm = ({ formData }) => {
               <Typography gutterBottom>CVV:</Typography>
             </Grid>
             <Grid item xs={9}>
-              <Typography gutterBottom>{cardName}</Typography>
-              <Typography gutterBottom>{cardNumber}</Typography>
-              <Typography gutterBottom>{expDate}</Typography>
-              <Typography gutterBottom>{cvv}</Typography>
+              <Typography gutterBottom>{paymentData.cardName}</Typography>
+              <Typography gutterBottom>{paymentData.cardNumber}</Typography>
+              <Typography gutterBottom>{paymentData.expDate}</Typography>
+              <Typography gutterBottom>{paymentData.cvv}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -126,7 +110,7 @@ const ReviewForm = ({ formData }) => {
 
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant='h6' gutterBottom>
             Resumen del Pedido
           </Typography>
           <Typography gutterBottom>Total: ${totalPrice.toFixed(2)}</Typography>
