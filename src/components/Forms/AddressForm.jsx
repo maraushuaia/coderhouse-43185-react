@@ -38,7 +38,7 @@ const AddressForm = ({formData, onFormDataChange, onValidChange}) => {
   return (
     <React.Fragment>
       <Typography variant='h6' gutterBottom my={2}>
-        Shipping address
+        Dirección de Envío
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>

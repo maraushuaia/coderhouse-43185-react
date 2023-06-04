@@ -87,7 +87,7 @@ const ReviewForm = ({shippingAddress, paymentData}) => {
           <Typography gutterBottom>{shippingAddress.country}</Typography>
         </Grid>
 
-        <Grid item container direction='column' xs={12} sm={6} mt={2}>
+        <Grid item container direction='column' xs={12} sm={12} mt={2}>
           <Typography variant='h6' gutterBottom>
             Detalles del Pago
           </Typography>
@@ -108,7 +108,7 @@ const ReviewForm = ({shippingAddress, paymentData}) => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={2} mt={2}>
         <Grid item xs={12}>
           <Typography variant='h6' gutterBottom>
             Resumen del Pedido

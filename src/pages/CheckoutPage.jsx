@@ -14,7 +14,7 @@ import PaymentForm from '../components/Forms/PaymentForm';
 import ReviewForm from '../components/Forms/ReviewForm';
 import ValidateForm from '../helpers/ValidateForm';
 
-const steps = ['Dirección de Envío', 'Detalles del Pago', 'Confirmación'];
+const steps = ['Envío', 'Pago', 'Confirmación'];
 
 const CheckoutPage = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -163,13 +163,13 @@ const CheckoutPage = () => {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant='h5' gutterBottom>
-                  Thank you for your order.
+                <Typography variant='h5' gutterBottom pt={2}>
+                  Gracias por su compra.
                 </Typography>
                 <Typography variant='subtitle1'>
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
+                  Su número de pedido es #2001539. Le hemos enviado por correo
+                  electrónico confirmación del pedido, y le enviaremos una
+                  actualización cuando su pedido sea enviado.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -188,7 +188,7 @@ const CheckoutPage = () => {
                       <Button onClick={handleBack}>Atrás</Button>
                     </Grid>
                   )}
-                  <Grid item pr={2}>
+                  <Grid item>
                     <Button
                       variant='contained'
                       color='secondary'
