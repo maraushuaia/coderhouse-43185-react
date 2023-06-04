@@ -17,6 +17,7 @@ const AddressForm = ({formData, onFormDataChange, onValidChange}) => {
       [name]: value,
     };
     const isFormValid = validateForm(updatedFormData);
+    setValid(isFormValid);
     onFormDataChange(updatedFormData, isFormValid);
   };
 

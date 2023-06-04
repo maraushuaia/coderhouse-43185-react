@@ -64,7 +64,7 @@ const CheckoutPage = () => {
 
   const getRequiredFields = (step) => {
     switch (step) {
-      case 'Dirección de Envío':
+      case 'Envío':
         return [
           'firstName',
           'lastName',
@@ -74,7 +74,7 @@ const CheckoutPage = () => {
           'zip',
           'country',
         ];
-      case 'Detalles del Pago':
+      case 'Pago':
         return ['cardName', 'cardNumber', 'expDate', 'cvv'];
       default:
         return [];
@@ -83,9 +83,9 @@ const CheckoutPage = () => {
 
   const getFormData = (step) => {
     switch (step) {
-      case 'Dirección de Envío':
+      case 'Envío':
         return shippingAddress;
-      case 'Detalles del Pago':
+      case 'Pago':
         return paymentData;
       default:
         return {};
