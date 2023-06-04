@@ -14,6 +14,7 @@ import UserView from '../components/User/UserView';
 import ContextCartWidget from '../contexts/ContextCartWidget';
 import ContextCategories from '../contexts/ContextCategories';
 import {ContextProducts} from '../contexts/ContextProducts';
+import {ContextFavorites} from '../contexts/ContextFavorites';
 import Cart from '../components/Cart/Cart';
 import Footer from '../components/Footer/Footer';
 import Error404 from '../pages/Error404';
@@ -25,23 +26,28 @@ const Rutas = () => {
       <ContextProducts>
         <ContextCategories>
           <ContextCartWidget>
-            <NavbarRender />
-            <Routes>
-              <Route path='/' element={<HomePage />} />
-              <Route path='/categorias' element={<CategoriesPage />} />
-              <Route path='/ofertas' element={<OfferPage />} />
-              <Route path='/favoritos' element={<FavoritesPage />} />
-              <Route path='/ayuda' element={<HelpPage />} />
-              <Route path='/notificaciones' element={<NotificationsPage />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<CheckoutPage />} />
-              <Route path='/user' element={<UserView />} />
-              <Route path='/itemDetail/:id' element={<ItemDetailContainer />} />
-              <Route path='*' element={<Error404 />} />
-            </Routes>
-            <Footer />
-            <FooterFixer />
-            <BarMobile />
+            <ContextFavorites>
+              <NavbarRender />
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/categorias' element={<CategoriesPage />} />
+                <Route path='/ofertas' element={<OfferPage />} />
+                <Route path='/favoritos' element={<FavoritesPage />} />
+                <Route path='/ayuda' element={<HelpPage />} />
+                <Route path='/notificaciones' element={<NotificationsPage />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout' element={<CheckoutPage />} />
+                <Route path='/user' element={<UserView />} />
+                <Route
+                  path='/itemDetail/:id'
+                  element={<ItemDetailContainer />}
+                />
+                <Route path='*' element={<Error404 />} />
+              </Routes>
+              <Footer />
+              <FooterFixer />
+              <BarMobile />
+            </ContextFavorites>
           </ContextCartWidget>
         </ContextCategories>
       </ContextProducts>
