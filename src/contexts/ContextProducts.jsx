@@ -1,15 +1,16 @@
-import React, {createContext, useEffect, useState} from 'react';
-import {db} from '../FirebaseConfig';
-import {collection, getDocs} from 'firebase/firestore';
+import React, { createContext, useEffect, useState } from "react";
+import { db } from "../FirebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 
 const ProductContext = createContext();
 
-const ContextProducts = ({children}) => {
+const ContextProducts = ({ children }) => {
   const [products, setProducts] = useState([]);
+  console.log("Context Products Inicializado (ContextProducts): ", products);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const itemsCollection = collection(db, 'products');
+    const itemsCollection = collection(db, "products");
     getDocs(itemsCollection).then((res) => {
       let products = res.docs.map((product) => {
         return {
@@ -18,7 +19,7 @@ const ContextProducts = ({children}) => {
         };
       });
       setProducts(products);
-      console.log('Productos en Context Products: ', products);
+      console.log("Context Products Recuperados: ", products);
     });
   }, []);
 
@@ -34,4 +35,4 @@ const ContextProducts = ({children}) => {
   );
 };
 
-export {ProductContext, ContextProducts};
+export { ProductContext, ContextProducts };
