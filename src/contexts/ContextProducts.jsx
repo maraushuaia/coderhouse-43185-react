@@ -1,4 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
+import {db} from '../FirebaseConfig';
+import {collection, getDocs} from 'firebase/firestore';
 
 const ProductContext = createContext();
 
@@ -7,16 +9,17 @@ const ContextProducts = ({children}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (products.length === 0) {
-      setIsLoading(true);
-      fetch(process.env.REACT_APP_URL_LOCAL)
-        .then((response) => response.json())
-        .then((data) => {
-          setProducts(data);
-          setIsLoading(false);
-        })
-        .catch((error) => console.log(error));
-    }
+    const itemsCollection = collection(db, 'products');
+    getDocs(itemsCollection).then((res) => {
+      let products = res.docs.map((product) => {
+        return {
+          ...product.data(),
+          id: product.id,
+        };
+      });
+      setProducts(products);
+      console.log('Productos en Context Products: ', products);
+    });
   }, []);
 
   const contextValue = {

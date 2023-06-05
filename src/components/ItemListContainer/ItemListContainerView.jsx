@@ -39,9 +39,9 @@ const ItemListContainerView = ({products, loading}) => {
               </Link>
             ))
           ) : (
-            <Typography variant='body1'>
-              No hay productos disponibles
-            </Typography>
+            <Box sx={{display: 'grid', justifyContent: 'center'}}>
+              <CircularProgress />
+            </Box>
           )}
         </Box>
       )}
