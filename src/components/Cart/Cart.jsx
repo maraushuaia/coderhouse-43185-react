@@ -66,7 +66,8 @@ const Cart = () => {
         <Grid item xs={12} md={8} lg={8}>
           <Paper sx={{ p: 2 }}>
             <Grid container alignItems="center">
-              <Grid item xs={4}>
+              <Grid item xs={1} sx={{ mr: { xs: 4 } }} />
+              <Grid item xs={3} sx={{ mr: { xs: 2 } }}>
                 <Typography variant="subtitle1">Producto</Typography>
               </Grid>
               <Grid
@@ -81,7 +82,15 @@ const Cart = () => {
               <Grid
                 item
                 xs={2}
-                sx={{ display: { md: "none", lg: "none", xl: "none" } }}
+                sx={{
+                  display: {
+                    xs: "flex",
+                    sm: "flex",
+                    md: "none",
+                    lg: "none",
+                    xl: "none",
+                  },
+                }}
                 mr={2}
               >
                 <Typography variant="subtitle1">Cant.</Typography>
@@ -92,7 +101,13 @@ const Cart = () => {
                 item
                 xs={2}
                 sx={{
-                  display: { xs: "none", md: "flex", lg: "flex", xl: "flex" },
+                  display: {
+                    xs: "none",
+                    sm: "flex",
+                    md: "flex",
+                    lg: "flex",
+                    xl: "flex",
+                  },
                 }}
               >
                 <Typography variant="subtitle1">Precio</Typography>
@@ -101,11 +116,17 @@ const Cart = () => {
                 <Typography variant="subtitle1">SubTotal</Typography>
               </Grid>
             </Grid>
+
             {cartProducts.map((elemento) => (
               <Card key={elemento.id} style={{ margin: "10px 0" }}>
                 <CardContent>
                   <Grid container alignItems="center">
-                    <Grid item xs={4} mr={2}>
+                    <Grid item xs={0.8} sx={{ mr: { xs: 4 } }}>
+                      <IconButton onClick={() => removeFromCart(elemento.id)}>
+                        <DeleteIcon />
+                      </IconButton>
+                    </Grid>
+                    <Grid item xs={3} sx={{ mr: { xs: 3 } }}>
                       <Typography>{elemento.name}</Typography>
                     </Grid>
                     <Grid item xs={2}>
@@ -123,20 +144,15 @@ const Cart = () => {
                           lg: "flex",
                           xl: "flex",
                         },
+                        mr: { xs: 4, sm: 2, md: 1, lg: 1, xl: 1 },
                       }}
-                      mr={2}
                     >
                       <Typography>${elemento.price}</Typography>
                     </Grid>
-                    <Grid item xs={2} mr={{ xs: 4 }}>
+                    <Grid item xs={2}>
                       <Typography>
                         ${(elemento.price * elemento.quantity).toFixed(2)}
                       </Typography>
-                    </Grid>
-                    <Grid item xs={2}>
-                      <IconButton onClick={() => removeFromCart(elemento.id)}>
-                        <DeleteIcon />
-                      </IconButton>
                     </Grid>
                   </Grid>
                 </CardContent>
