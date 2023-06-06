@@ -32,7 +32,7 @@ const Cart = () => {
         }}
       >
         <Box>
-          <Typography variant="h5" align="center">
+          <Typography variant="h5" align="center" mb={2} p={1}>
             Tu carrito está vacío. ¡Te invitamos a explorar nuestros productos y
             realizar una compra!
           </Typography>
@@ -51,7 +51,7 @@ const Cart = () => {
   }
 
   const handleCheckout = () => {
-    navigate("/checkout"); // Navegar a la página de checkout
+    navigate("/checkout");
   };
 
   return (
@@ -69,33 +69,66 @@ const Cart = () => {
               <Grid item xs={4}>
                 <Typography variant="subtitle1">Producto</Typography>
               </Grid>
-              <Grid item xs={2}>
+              <Grid
+                item
+                xs={2}
+                sx={{
+                  display: { xs: "none", md: "flex", lg: "flex", xl: "flex" },
+                }}
+              >
                 <Typography variant="subtitle1">Cantidad</Typography>
               </Grid>
-              <Grid item xs={2}>
+              <Grid
+                item
+                xs={2}
+                sx={{ display: { md: "none", lg: "none", xl: "none" } }}
+                mr={2}
+              >
+                <Typography variant="subtitle1">Cant.</Typography>
+              </Grid>
+
+              {/* Esta columna no se muestra en pantallas pequeñas */}
+              <Grid
+                item
+                xs={2}
+                sx={{
+                  display: { xs: "none", md: "flex", lg: "flex", xl: "flex" },
+                }}
+              >
                 <Typography variant="subtitle1">Precio</Typography>
               </Grid>
               <Grid item xs={2}>
                 <Typography variant="subtitle1">SubTotal</Typography>
-              </Grid>
-              <Grid item xs={2}>
-                <Typography variant="subtitle1">Acción</Typography>
               </Grid>
             </Grid>
             {cartProducts.map((elemento) => (
               <Card key={elemento.id} style={{ margin: "10px 0" }}>
                 <CardContent>
                   <Grid container alignItems="center">
-                    <Grid item xs={4}>
+                    <Grid item xs={4} mr={2}>
                       <Typography>{elemento.name}</Typography>
                     </Grid>
                     <Grid item xs={2}>
                       <Typography>{elemento.quantity}</Typography>
                     </Grid>
-                    <Grid item xs={2}>
+                    {/* Esta columna no se muestra en pantallas pequeñas */}
+                    <Grid
+                      item
+                      xs={2}
+                      sx={{
+                        display: {
+                          xs: "none",
+                          sm: "flex",
+                          md: "flex",
+                          lg: "flex",
+                          xl: "flex",
+                        },
+                      }}
+                      mr={2}
+                    >
                       <Typography>${elemento.price}</Typography>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={2} mr={{ xs: 4 }}>
                       <Typography>
                         ${(elemento.price * elemento.quantity).toFixed(2)}
                       </Typography>
@@ -115,7 +148,7 @@ const Cart = () => {
         <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
           <Paper sx={{ mx: { xs: 0, sm: 0, md: 3, xl: 3, lg: 3 } }}>
             <Grid container alignItems="center" justifyContent="center">
-              <Grid item textAlign="center">
+              <Grid item textAlign="center" mt={2}>
                 <Typography>Total de la compra:</Typography>
                 <Typography>$ {precioTotal}</Typography>
               </Grid>
