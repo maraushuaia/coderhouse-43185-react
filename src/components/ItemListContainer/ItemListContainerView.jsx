@@ -1,6 +1,6 @@
+import React from "react";
 import { Box, CircularProgress, Container } from "@mui/material";
 import CardProducts from "../Card/CardProducts";
-import { Link } from "react-router-dom";
 
 const ItemListContainerView = ({ products, loading }) => {
   return (
@@ -14,6 +14,7 @@ const ItemListContainerView = ({ products, loading }) => {
         <Box
           sx={{
             display: "grid",
+            justifyContent: "left",
           }}
           gridTemplateColumns={{
             xs: "repeat(auto-fit, minmax(140px, 1fr))",
@@ -26,13 +27,7 @@ const ItemListContainerView = ({ products, loading }) => {
         >
           {products && products.length > 0 ? (
             products.map((product) => (
-              <Link
-                key={product.id}
-                to={`/itemDetail/${product.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <CardProducts product={product} />
-              </Link>
+              <CardProducts key={product.id} product={product} />
             ))
           ) : (
             <Box sx={{ display: "grid", justifyContent: "center" }}>
@@ -44,4 +39,5 @@ const ItemListContainerView = ({ products, loading }) => {
     </Container>
   );
 };
+
 export default ItemListContainerView;
