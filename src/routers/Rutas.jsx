@@ -10,7 +10,6 @@ import OfferPage from "../pages/OfferPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import HelpPage from "../pages/HelpPage";
 import NotificationsPage from "../pages/NotificationsPage";
-import UserView from "../components/User/UserView";
 import ContextCartWidget from "../contexts/ContextCartWidget";
 import ContextCategories from "../contexts/ContextCategories";
 import { ContextProducts } from "../contexts/ContextProducts";
@@ -19,6 +18,8 @@ import Cart from "../components/Cart/Cart";
 import Footer from "../components/Footer/Footer";
 import Error404 from "../pages/Error404";
 import CheckoutPage from "../pages/CheckoutPage";
+import LoginPage from "../pages/LoginPage";
+import MorePage from "../pages/MorePage";
 
 const Rutas = () => {
   return (
@@ -37,7 +38,8 @@ const Rutas = () => {
                 <Route path="/notificaciones" element={<NotificationsPage />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/user" element={<UserView />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/more" element={<MorePage />} />
                 <Route
                   path="/itemDetail/:id"
                   element={<ItemDetailContainer />}

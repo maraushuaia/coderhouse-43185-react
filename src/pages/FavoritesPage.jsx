@@ -1,12 +1,6 @@
 import React, { useContext } from "react";
 import { ContextFavorites } from "../contexts/ContextFavorites";
-import {
-  Box,
-  CircularProgress,
-  Container,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Container, Typography, Button } from "@mui/material";
 import CardProducts from "../components/Card/CardProducts";
 import { Link } from "react-router-dom";
 
@@ -30,7 +24,13 @@ const FavoritesPage = () => {
           <Typography variant="body1" align="center" gutterBottom>
             Ve a nuestro listado de productos, esperamos que muchos te gusten.
           </Typography>
-          <Button component={Link} to="/" variant="contained" sx={{ mt: 2 }}>
+          <Button
+            component={Link}
+            to="/"
+            variant="contained"
+            sx={{ mt: 2 }}
+            color="secondary"
+          >
             Ir a la página de inicio
           </Button>
         </Box>

@@ -127,9 +127,9 @@ const CardProducts = ({ product }) => {
         <Divider />
         <Box
           display={"flex"}
-          justifyContent={"center"} // Alineación del icono de favorito a la derecha
+          justifyContent={"center"}
           mt={{ xs: 1, sm: 1, md: 1, lg: 1 }}
-          pr={1} // Espacio a la derecha para el icono de favorito
+          pr={1}
         >
           <IconButton
             aria-label="add to favorites"

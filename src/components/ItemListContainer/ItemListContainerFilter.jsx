@@ -7,7 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 
-const ItemListContainerFilter = ({ categories, onCategoryChange }) => {
+const ItemListContainerFilter = ({
+  categories,
+  onCategoryChange,
+  onShowAll,
+}) => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleCategoryChange = (event) => {
@@ -28,6 +32,7 @@ const ItemListContainerFilter = ({ categories, onCategoryChange }) => {
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
+          <MenuItem value="">Todos los productos</MenuItem>
           {categories.map((category, index) => (
             <MenuItem key={`${category}-${index}`} value={category}>
               {category}
