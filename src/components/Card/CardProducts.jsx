@@ -94,7 +94,8 @@ const CardProducts = ({product}) => {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
-                mb={2}
+                mb={4}
+                mt={4}
               >
                 <Typography
                   gutterBottom
@@ -107,7 +108,16 @@ const CardProducts = ({product}) => {
                 </Typography>
               </Box>
 
-              <Box sx={{height: descriptionHeight}}>
+              <Box
+                sx={{height: descriptionHeight}}
+                display={{
+                  xs: 'none',
+                  sm: 'none',
+                  md: 'flex',
+                  lg: 'flex',
+                  xl: 'flex',
+                }}
+              >
                 <Typography variant='body2' color='text.secondary'>
                   {product.descriptionShort.length > 70
                     ? product.descriptionShort.substring(0, 70) + '...'
