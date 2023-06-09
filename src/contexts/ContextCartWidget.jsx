@@ -1,13 +1,13 @@
-import React, {createContext, useState} from 'react';
+import React, { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const ContextCartWidget = ({children}) => {
+const ContextCartWidget = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
   // FUNCION PARA SABER SI UN PRODUCTO YA ESTA EN EL CARRITO
   const isInCart = (id) => {
-    return cartProducts.some((elemento) => elemento.id === parseInt(id));
+    return cartProducts.some((elemento) => elemento.id === id);
   };
 
   // Función para agregar un producto al carrito
@@ -19,7 +19,7 @@ const ContextCartWidget = ({children}) => {
       // Si el producto ya está en el carrito, actualizar la cantidad
       setCartProducts((prevItems) =>
         prevItems.map((item) => {
-          if (item.id === parseInt(productId)) {
+          if (item.id === productId) {
             return {
               ...item,
               quantity: item.quantity + quantity,
@@ -30,18 +30,20 @@ const ContextCartWidget = ({children}) => {
       );
     } else {
       // Si el producto no está en el carrito, agregarlo
-      const {stock, ...dataWithoutStock} = productData;
+      const { stock, ...dataWithoutStock } = productData;
       setCartProducts((prevItems) => [
         ...prevItems,
-        {id: parseInt(productId), quantity, ...dataWithoutStock},
+        { id: parseInt(productId), quantity, ...dataWithoutStock },
       ]);
     }
   };
 
   // Función para eliminar un producto del carrito
   const removeFromCart = (productId) => {
+    console.log("Entró a elimianr el producto");
+    console.log("Contenido del Carrito ANTES de eliminar: ", cartProducts);
     setCartProducts((prevItems) =>
-      prevItems.filter((item) => item.id !== parseInt(productId))
+      prevItems.filter((item) => item.id !== productId)
     );
   };
 
@@ -65,6 +67,8 @@ const ContextCartWidget = ({children}) => {
 
     return precioTotal;
   };
+
+  console.log("Contenido ACTUALIZADO del Carrito: ", cartProducts);
 
   const data = {
     cartProducts,
