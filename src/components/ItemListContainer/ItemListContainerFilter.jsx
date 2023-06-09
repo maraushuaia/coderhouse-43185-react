@@ -1,18 +1,14 @@
-import { useState } from "react";
+import {useState} from 'react';
 import {
   FormControl,
   Select,
   MenuItem,
   Container,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
-const ItemListContainerFilter = ({
-  categories,
-  onCategoryChange,
-  onShowAll,
-}) => {
-  const [selectedCategory, setSelectedCategory] = useState("");
+const ItemListContainerFilter = ({categories, onCategoryChange}) => {
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleCategoryChange = (event) => {
     const category = event.target.value;
@@ -21,18 +17,18 @@ const ItemListContainerFilter = ({
   };
 
   return (
-    <Container maxWidth="xs">
-      <FormControl fullWidth sx={{ mt: 3 }}>
-        <Typography variant="h6" noWrap component="div">
+    <Container maxWidth='xs'>
+      <FormControl fullWidth sx={{mt: 3}}>
+        <Typography variant='h6' noWrap component='div'>
           Filtrar por categoría
         </Typography>
         <Select
-          labelId="category-label"
-          id="category"
+          labelId='category-label'
+          id='category'
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
-          <MenuItem value="">Todos los productos</MenuItem>
+          <MenuItem value=''>Todos los productos</MenuItem>
           {categories.map((category, index) => (
             <MenuItem key={`${category}-${index}`} value={category}>
               {category}

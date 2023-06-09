@@ -1,21 +1,24 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {CardActionArea, Stack, Box, Divider} from '@mui/material';
+import {CardActionArea, Box, Divider} from '@mui/material';
 
-const CardRelatedProduct = (imgPrincipal, alt, price, extract) => {
-  console.log(imgPrincipal);
+const CardRelatedProduct = ({imgPrincipal, price, extract}) => {
+  console.log('Imagen Principal recibida CardRelatedProduct =>', imgPrincipal);
+
+  const truncatedExtract =
+    extract.length > 80 ? extract.substring(0, 80) + '...' : extract;
+
   return (
-    <Box sx={{mx: 2}}>
+    <Box sx={{mx: 2, height: '100%'}}>
       <Card>
         <CardActionArea>
           <CardMedia
             component='img'
             height='140'
             image={imgPrincipal}
-            alt={alt}
             sx={{mt: 2}}
           />
           <CardContent sx={{my: 1}}>
@@ -23,31 +26,27 @@ const CardRelatedProduct = (imgPrincipal, alt, price, extract) => {
               ${price}
             </Typography>
             <Typography variant='body2' color='text.secondary'>
-              {extract}
+              {truncatedExtract}
             </Typography>
             <Divider sx={{my: 2}} />
-            <Box
+            <Typography
               sx={{
                 color: 'success.dark',
                 display: 'inline',
                 fontWeight: 'medium',
                 mx: 0.5,
               }}
+              variant='body2'
             >
               18.77%
-            </Box>
-            <Box
+            </Typography>
+            <Typography
               sx={{color: 'text.secondary', display: 'inline', fontSize: 12}}
+              variant='body2'
             >
               vs. last week
-            </Box>
+            </Typography>
           </CardContent>
-          <Stack
-            direction='row'
-            spacing={2}
-            justifyContent={'center'}
-            sx={{mb: 2}}
-          ></Stack>
         </CardActionArea>
       </Card>
     </Box>

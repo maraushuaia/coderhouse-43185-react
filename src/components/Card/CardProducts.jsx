@@ -56,7 +56,6 @@ const CardProducts = ({product}) => {
       addFavorite(product);
     }
     setIsProductFavorite(!isProductFavorite);
-    console.log('isProductFavorite', isProductFavorite);
   };
 
   return (
