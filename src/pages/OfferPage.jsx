@@ -5,7 +5,6 @@ import CardProducts from '../components/Card/CardProducts';
 
 const OfferPage = () => {
   const {products} = useContext(ProductContext);
-  console.log('Productos en Context Products: ', products);
 
   const [offerProducts, setOfferProducts] = useState([]);
 
@@ -13,8 +12,6 @@ const OfferPage = () => {
     const filteredProducts = products.filter((product) => product.oferta);
     setOfferProducts(filteredProducts);
   }, [products]);
-
-  console.log('Productos en oferta: ', offerProducts);
 
   return (
     <Grid
