@@ -19,7 +19,6 @@ import Button from '@mui/material/Button';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
-  const navigate = useNavigate();
   const {product, loading, error} = useSearchProductID(id);
   const {products} = useContext(ProductContext);
   const {favorites, addFavorite, removeFavorite} = useContext(ContextFavorites);
