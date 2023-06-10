@@ -1,23 +1,30 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 
 // Crear el contexto de favoritos
 export const ContextFavorites = createContext();
 
 // Proveedor de favoritos
 export const FavoritesProvider = ({children}) => {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = localStorage.getItem('favoritos');
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
+
+  // Guardar los favoritos en el localStorage al actualizar
+  useEffect(() => {
+    localStorage.setItem('favoritos', JSON.stringify(favorites));
+  }, [favorites]);
 
   // Función para agregar un producto a los favoritos
   const addFavorite = (product) => {
-    setFavorites([...favorites, product]);
+    setFavorites((prevFavorites) => [...prevFavorites, product]);
   };
 
   // Función para eliminar un producto de los favoritos
   const removeFavorite = (productId) => {
-    const updatedFavorites = favorites.filter(
-      (product) => product.id !== productId
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((product) => product.id !== productId)
     );
-    setFavorites(updatedFavorites);
   };
 
   // Verificar si un producto está en favoritos

@@ -12,6 +12,7 @@ const useSearchProductID = (id) => {
 
     if (foundProduct) {
       setProduct(foundProduct);
+      localStorage.setItem('ProductDetail', JSON.stringify(foundProduct));
     } else {
       setError('Los detalles del producto no se encuentran disponibles');
     }

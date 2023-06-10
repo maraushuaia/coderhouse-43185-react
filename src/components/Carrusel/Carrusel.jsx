@@ -14,8 +14,12 @@ const Carrusel = ({renderType, category, oferta}) => {
     const handleResize = () => {
       const containerWidth = containerRef.current.offsetWidth;
       const cardWidth = 280;
-      const newMaxVisibleCards = Math.floor(containerWidth / cardWidth);
-      setMaxVisibleCards(newMaxVisibleCards);
+      const maxVisibleCards = Math.floor(containerWidth / cardWidth);
+      const adjustedMaxVisibleCards = Math.min(
+        maxVisibleCards,
+        products.length
+      );
+      setMaxVisibleCards(adjustedMaxVisibleCards);
     };
 
     handleResize();
@@ -24,14 +28,24 @@ const Carrusel = ({renderType, category, oferta}) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [products.length]);
 
   const handlePrevSlide = () => {
-    setCurrentIndex((prevIndex) => prevIndex - 1);
+    setCurrentIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        return products.length - maxVisibleCards;
+      } else {
+        return prevIndex - 1;
+      }
+    });
   };
 
   const handleNextSlide = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1);
+    setCurrentIndex((prevIndex) => {
+      const lastIndex = products.length - maxVisibleCards;
+      const nextIndex = prevIndex + 1;
+      return nextIndex > lastIndex ? 0 : nextIndex;
+    });
   };
 
   const renderCards = () => {

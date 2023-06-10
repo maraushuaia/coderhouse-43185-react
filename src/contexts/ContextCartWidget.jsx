@@ -1,9 +1,12 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 
 export const CartContext = createContext();
 
 const ContextCartWidget = ({children}) => {
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(() => {
+    const storedCartProducts = localStorage.getItem('cartProducts');
+    return storedCartProducts ? JSON.parse(storedCartProducts) : [];
+  });
 
   // FUNCION PARA SABER SI UN PRODUCTO YA ESTA EN EL CARRITO
   const isInCart = (id) => {
@@ -49,6 +52,11 @@ const ContextCartWidget = ({children}) => {
   const clearCart = () => {
     setCartProducts([]);
   };
+
+  // Actualizar los productos del carrito en localStorage cada vez que cambien
+  useEffect(() => {
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+  }, [cartProducts]);
 
   // OBTENER EL TOTAL DE LAS CANTIDADES DE LOS ELEMENTOS DEL CARRITO
   const getTotalQuantity = () => {
