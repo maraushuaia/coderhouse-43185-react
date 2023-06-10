@@ -15,7 +15,7 @@ const CardImages = ({images}) => {
   };
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+    <Box sx={{display: 'flex'}}>
       <Grid
         sx={{
           display: {md: 'flex'},
@@ -26,8 +26,8 @@ const CardImages = ({images}) => {
         flexDirection={{xs: 'row', sm: 'column', md: 'column', lg: 'row'}}
       >
         <Box
-          width={{xs: '100%', sm: '370px', md: '780px', lg: '800px'}}
-          height={{xs: '340px', sm: '400px', md: '600px', lg: '620px'}}
+          width={{xs: '90%', sm: '370px', md: '780px', lg: '800px'}}
+          height={{xs: '320px', sm: '400px', md: '600px', lg: '620px'}}
           sx={{
             backgroundImage: `url(${selectedImage})`,
             backgroundRepeat: 'no-repeat',

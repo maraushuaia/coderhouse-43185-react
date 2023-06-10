@@ -73,7 +73,7 @@ const ItemDetailContainer = () => {
   );
 
   return (
-    <Container maxWidth='xl' sx={{mt: 4}}>
+    <Container maxWidth='xl' sx={{mt: 4, minHeight: '80vh'}}>
       <Box
         sx={{
           marginBottom: 4,
@@ -85,6 +85,27 @@ const ItemDetailContainer = () => {
         <Typography variant='h5' sx={{ml: 2, mb: 2}}>
           {product.name}
         </Typography>
+        <Box display={{xs: 'flex', lg: 'none'}}>
+          {product.oferta && (
+            <Box
+              display={product.oferta ? 'flex' : 'none'}
+              justifyContent={'center'}
+              fontStyle={'bold'}
+              mx={10}
+              mb={3}
+              component='span'
+              sx={{
+                backgroundColor: 'green',
+                color: 'white',
+                padding: '5px 50px',
+                fontSize: '16px',
+                borderRadius: '4px',
+              }}
+            >
+              APROVECHA LA OFERTA
+            </Box>
+          )}
+        </Box>
         <Grid
           container
           sx={{
@@ -92,14 +113,14 @@ const ItemDetailContainer = () => {
             flexDirection: {xs: 'column', md: 'row'},
           }}
         >
-          <Grid item xs={12} sm={12} md={12} lg={8}>
+          <Grid item xs={8.5} sm={12} md={12} lg={8}>
             <CardImages images={product.imageAditional} />
-            <Box px={1.5}>
+            <Box mx={1.5}>
               <Typography variant='span'>{product.descriptionLong}</Typography>
             </Box>
           </Grid>
 
-          <Grid item lg={4}>
+          <Grid item xs={12} lg={4}>
             {product.oferta && (
               <Box
                 display={product.oferta ? 'flex' : 'none'}
@@ -109,6 +130,7 @@ const ItemDetailContainer = () => {
                 mb={3}
                 component='span'
                 sx={{
+                  display: {xs: 'none', lg: 'flex'},
                   backgroundColor: 'green',
                   color: 'white',
                   padding: '5px 50px',

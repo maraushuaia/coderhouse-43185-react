@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import {Grid} from '@mui/material';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import AddressForm from '../components/Forms/AddressForm';
 import PaymentForm from '../components/Forms/PaymentForm';
 import ReviewForm from '../components/Forms/ReviewForm';
@@ -127,7 +126,7 @@ const CheckoutPage = () => {
       container
       spacing={0}
       justifyContent='center'
-      sx={{minHeight: '100vh'}}
+      sx={{minHeight: '80vh'}}
     >
       <Grid item xs={12} sm={10} md={8} lg={6} xl={4}>
         <Paper
@@ -188,6 +187,7 @@ const CheckoutPage = () => {
                       <Button onClick={handleBack}>Atrás</Button>
                     </Grid>
                   )}
+
                   <Grid item mr={2}>
                     <Button
                       variant='contained'

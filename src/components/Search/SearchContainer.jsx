@@ -1,7 +1,3 @@
-// componente de búsqueda de productos;
-// import React, {useState} from 'react';
-// import {Box, TextField, Button} from '@mui/material';
-
 import React, {useState} from 'react';
 import {Box, TextField, Button} from '@mui/material';
 

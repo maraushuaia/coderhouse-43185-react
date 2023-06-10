@@ -1,6 +1,3 @@
-/***/
-/* Este componente se invoca unicamente desde el Navbar*/
-/***/
 import React from 'react';
 import {Badge} from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
