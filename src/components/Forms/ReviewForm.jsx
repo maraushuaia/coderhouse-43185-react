@@ -22,7 +22,7 @@ const ReviewForm = ({shippingAddress, paymentData}) => {
   useEffect(() => {
     if (cartProducts.length === 0) {
       const timer = setTimeout(() => {
-        navigate('/'); // Redireccionar a la página de inicio
+        navigate('/favoritos'); // Redireccionar a la página de inicio
       }, 3000);
 
       setIsModalOpen(true);
@@ -175,7 +175,9 @@ const ReviewForm = ({shippingAddress, paymentData}) => {
           <Typography variant='h5' gutterBottom>
             El carrito está vacío
           </Typography>
-          <Typography gutterBottom>Serás redirigido al Inicio.</Typography>
+          <Typography gutterBottom>
+            Serás redirigido a tus Favoritos.
+          </Typography>
         </Box>
       </Modal>
     </React.Fragment>
