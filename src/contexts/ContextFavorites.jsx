@@ -1,10 +1,10 @@
-import React, { createContext, useState } from "react";
+import React, {createContext, useState} from 'react';
 
 // Crear el contexto de favoritos
 export const ContextFavorites = createContext();
 
 // Proveedor de favoritos
-export const FavoritesProvider = ({ children }) => {
+export const FavoritesProvider = ({children}) => {
   const [favorites, setFavorites] = useState([]);
 
   // Función para agregar un producto a los favoritos
@@ -32,8 +32,6 @@ export const FavoritesProvider = ({ children }) => {
     removeFavorite,
     isFavorite,
   };
-
-  console.log("Productos en ContextFavoritos", favorites);
 
   return (
     <ContextFavorites.Provider value={contextValue}>

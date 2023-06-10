@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import useSearchProductID from '../../hooks/useSearchProductID';
 import CardImages from '../Card/CardImages';
 import Counter from '../Counter/Counter';
