@@ -19,7 +19,14 @@ const FooterFixer = () => {
   return (
     <FooterWrapper>
       <Typography variant='body2'>
-        &copy; {currentYear} EXPLORA | Todos los derechos reservados
+        &copy; {currentYear} EXPLORA | Todos los derechos reservados | Diseño:{' '}
+        <a
+          href='https://www.linkedin.com/in/rodrigo-alexis-mu%C3%B1oz/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Rodrigo Muñoz
+        </a>
       </Typography>
     </FooterWrapper>
   );

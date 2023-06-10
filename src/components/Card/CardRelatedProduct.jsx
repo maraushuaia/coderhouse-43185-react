@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {CardActionArea, Box} from '@mui/material';
+import {CardActionArea, Box, Divider} from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {styled} from '@mui/system';
 import {useNavigate} from 'react-router-dom';
@@ -41,24 +41,26 @@ const CardRelatedProduct = ({
   };
 
   return (
-    <Box sx={{mx: 1.5, mb: 3, height: '100%'}}>
-      <Card sx={{height: '350px'}}>
-        <CardActionArea onClick={handleCardClick}>
-          <CardMedia
-            component='img'
-            height='140'
-            image={imgPrincipal}
-            sx={{mt: 2}}
-          />
+    <Box sx={{mx: 1.5, mb: 3}}>
+      <CardActionArea onClick={handleCardClick}>
+        <CardMedia
+          component='img'
+          height='140'
+          image={imgPrincipal}
+          sx={{mt: 2, height: '220px'}}
+        />
+
+        <Card sx={{height: '190px'}}>
           {oferta && (
             <GreenCircle>
               <Typography variant='body2'>OFF</Typography>
             </GreenCircle>
           )}
-          <CardContent sx={{my: 1}}>
+          <CardContent sx={{my: 1, textAlign: 'center'}}>
             <Typography gutterBottom variant='h5' component='div'>
               ${price}
             </Typography>
+            <Divider />
             <Typography variant='body2' color='text.secondary'>
               {truncatedExtract}
             </Typography>
@@ -68,8 +70,8 @@ const CardRelatedProduct = ({
               </Box>
             )}
           </CardContent>
-        </CardActionArea>
-      </Card>
+        </Card>
+      </CardActionArea>
     </Box>
   );
 };
