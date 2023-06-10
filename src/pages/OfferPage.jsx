@@ -26,7 +26,9 @@ const OfferPage = () => {
       mb={3}
     >
       {offerProducts.length > 0 ? (
-        offerProducts.map((product) => <CardProducts product={product} />)
+        offerProducts.map((product) => (
+          <CardProducts key={product.id} product={product} />
+        ))
       ) : (
         <Typography variant='body1'>
           No hay productos en oferta en este momento.
