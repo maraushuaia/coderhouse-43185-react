@@ -1,3 +1,82 @@
+// import React, {useState} from 'react';
+// import {Box, Grid} from '@mui/material';
+
+// const CardImages = ({images}) => {
+//   const [selectedImage, setSelectedImage] = useState(images[0]);
+//   console.log('Imagenes recibidas (CardImages): ', images);
+
+//   const handleImageSelect = (image) => {
+//     setSelectedImage(image);
+//   };
+
+//   return (
+//     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+//       <Grid
+//         sx={{
+//           display: {md: 'flex'},
+//           mb: 2,
+//           justifyContent: 'center',
+//         }}
+//         ml={{xs: 0, sm: 3, md: 3, lg: 3}}
+//         flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
+//       >
+//         <Box
+//           width={{xs: '100%', sm: '370px', md: '800px', lg: '800px'}}
+//           height={{xs: '340px', sm: '400px', md: '620px', lg: '620px'}}
+//           sx={{
+//             backgroundImage: `url(${selectedImage})`,
+//             backgroundRepeat: 'no-repeat',
+//             backgroundSize: 'contain',
+//             borderRadius: '4px',
+//           }}
+//         />
+
+//         <Grid item xs={12} sm={8} md={8} lg={2} xl={2}>
+//           <Box
+//             sx={{
+//               display: 'flex',
+//               flexWrap: 'wrap',
+//               justifyContent: 'center',
+//               flexDirection: {
+//                 xs: 'row',
+//                 md: 'column',
+//                 lg: 'column',
+//               },
+//               alignItems: 'center',
+//             }}
+//           >
+//             {images.map((image, index) => (
+//               <Box
+//                 key={index}
+//                 width={{xs: '55px', sm: '75px', md: '100px', lg: '160px'}}
+//                 height={{
+//                   xs: '55px',
+//                   sm: '75px',
+//                   md: '100px',
+//                   lg: '100px',
+//                 }}
+//                 sx={{
+//                   backgroundImage: `url(${image})`,
+//                   backgroundRepeat: 'no-repeat',
+//                   backgroundSize: 'contain',
+//                   cursor: 'pointer',
+//                   border: selectedImage === image ? '2px solid black' : 'none',
+//                   borderRadius: '4px',
+//                   alignItems: 'center',
+//                   m: 1,
+//                 }}
+//                 onClick={() => handleImageSelect(image)}
+//               />
+//             ))}
+//           </Box>
+//         </Grid>
+//       </Grid>
+//     </Box>
+//   );
+// };
+
+// export default CardImages;
+
 import React, {useState} from 'react';
 import {Box, Grid} from '@mui/material';
 
@@ -10,7 +89,7 @@ const CardImages = ({images}) => {
   };
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
       <Grid
         sx={{
           display: {md: 'flex'},
@@ -18,16 +97,21 @@ const CardImages = ({images}) => {
           justifyContent: 'center',
         }}
         ml={{xs: 0, sm: 3, md: 3, lg: 3}}
-        flexDirection={{xs: 'row', sm: 'colum', md: 'colum', lg: 'colum'}}
+        flexDirection={{xs: 'row', sm: 'column', md: 'column', lg: 'row'}}
       >
         <Box
-          width={{xs: '100%', sm: '370px', md: '800px', lg: '800px'}}
-          height={{xs: '340px', sm: '400px', md: '620px', lg: '620px'}}
+          width={{xs: '100%', sm: '370px', md: '780px', lg: '800px'}}
+          height={{xs: '340px', sm: '400px', md: '600px', lg: '620px'}}
           sx={{
             backgroundImage: `url(${selectedImage})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundSize: 'cover',
             borderRadius: '4px',
+            transition: 'background-image 0.3s ease',
+            '&:hover': {
+              cursor: 'pointer',
+              backgroundImage: `url(${selectedImage})`,
+            },
           }}
         />
 
@@ -39,8 +123,10 @@ const CardImages = ({images}) => {
               justifyContent: 'center',
               flexDirection: {
                 xs: 'row',
+                sm: 'column',
                 md: 'column',
                 lg: 'column',
+                xl: 'row',
               },
               alignItems: 'center',
             }}
@@ -49,12 +135,7 @@ const CardImages = ({images}) => {
               <Box
                 key={index}
                 width={{xs: '55px', sm: '75px', md: '100px', lg: '160px'}}
-                height={{
-                  xs: '55px',
-                  sm: '75px',
-                  md: '100px',
-                  lg: '100px',
-                }}
+                height={{xs: '55px', sm: '75px', md: '100px', lg: '100px'}}
                 sx={{
                   backgroundImage: `url(${image})`,
                   backgroundRepeat: 'no-repeat',
@@ -64,8 +145,12 @@ const CardImages = ({images}) => {
                   borderRadius: '4px',
                   alignItems: 'center',
                   m: 1,
+                  transition: 'border 0.3s ease',
+                  '&:hover': {
+                    border: '2px solid black',
+                  },
                 }}
-                onClick={() => handleImageSelect(image)}
+                onMouseEnter={() => handleImageSelect(image)}
               />
             ))}
           </Box>

@@ -1,12 +1,12 @@
-import React from "react";
-import { Container, Typography } from "@mui/material";
-import { ProductContext } from "../../contexts/ContextProducts";
-import OfferProductList from "../OfferProductList/OfferProductList";
+import React from 'react';
+import {Container, Typography} from '@mui/material';
+import {ProductContext} from '../../contexts/ContextProducts';
+import OfferProductList from '../OfferProductList/OfferProductList';
 
 const OfferPage = () => {
   return (
-    <Container maxWidth="xl" sx={{ mt: 4 }}>
-      <Typography variant="h4" sx={{ mb: 4 }}>
+    <Container maxWidth='xl' sx={{mt: 4}}>
+      <Typography variant='h4' sx={{mb: 4}}>
         Ofertas
       </Typography>
       <ProductContext.Consumer>

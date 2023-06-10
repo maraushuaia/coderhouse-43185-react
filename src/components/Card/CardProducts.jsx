@@ -84,7 +84,26 @@ const CardProducts = ({product}) => {
                 position: 'relative',
               }}
             />
-
+            {product.oferta && (
+              <Box
+                sx={{
+                  position: 'absolute',
+                  top: '8px',
+                  right: '8px',
+                  borderRadius: '50%',
+                  backgroundColor: 'green',
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Typography variant='body2' color='white'>
+                  OFF
+                </Typography>
+              </Box>
+            )}
             <CardContent sx={{flexGrow: 1}}>
               <Box
                 sx={{
