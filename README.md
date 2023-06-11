@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+scale=1.0">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Proyecto [Nombre del Proyecto]**
 
-## Available Scripts
+Este proyecto es una aplicación web desarrollada con React que utiliza las siguientes librerías:
 
-In the project directory, you can run:
+- React 18.2
+- Material UI 5
+- Fuente Roboto
+- Iconos de Material UI
+- react-loader-spinner 5.3.4
+- react-material-ui-carousel 3.4.2
+- react-responsive-carousel 3.2.23
+- react-router-dom 6.12.0
+- react-toastify 9.1.3
 
-### `npm start`
+Además, la aplicación se conecta a una base de datos Firebase y se despliega en Vercel.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Instalación**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para ejecutar esta aplicación en tu entorno local, sigue estos pasos:
 
-### `npm test`
+1. Clona este repositorio:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+git clone https://github.com/tu-usuario/nombre-del-repo.git
 
-### `npm run build`
+2. Ve al directorio del proyecto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd nombre-del-repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Instala las dependencias:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
 
-### `npm run eject`
+## **Uso**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para ejecutar la aplicación en tu entorno local, utiliza el siguiente comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Esto iniciará la aplicación y podrás acceder a ella en tu navegador a través de la siguiente URL: http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Base de datos Firebase**
 
-## Learn More
+Esta aplicación utiliza una base de datos Firebase para _almacenar productos y otra información de prueba del proyecto_.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **Características**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+El proyecto cuenta con las siguientes características:
 
-### Code Splitting
+- Tiene como menú principal las siguientes secciones: Categorías, Ofertas, Favoritos, Ayuda
+- En la sección de Categorías, se reciben todos los productos desde Firebase y se recorre todo el array en busca de las diversas categorías, las cuales se utilizan para segmentar los productos.
+- En la sección de Ofertas, se muestran todos los productos que tienen la propiedad "oferta" establecida como "true". Estos productos se muestran en un grupo especial y se identifican en el ecommerce con un círculo verde que indica "OFERTA".
+- En la sección de Favoritos, todos los productos se presentan como tarjetas (cards) y los usuarios pueden presionar el corazón para indicar que les gusta un producto. Los productos marcados como favoritos se almacenan en un estado y se guardan en el LocalStorage. Aún no se ha desarrollado la lógica para almacenar esta información en la base de datos Firebase.
+- La sección de Ayuda muestra un ejemplo de preguntas que podrían cargarse en Firebase y luego renderizarse para ser buscadas a través del buscador. La búsqueda se realiza únicamente por título de la pregunta.
+- Cuando se muestra el detalle de un producto, también se muestran productos relacionados. Estos productos son todos los demás productos de la misma categoría, excepto el producto que se está visualizando en ese momento.
+- En la vista de detalle de un producto, los usuarios pueden agregar productos al carrito de compras y también pueden agregar o quitar productos de la lista de Favoritos. Se mostrará una notificación en pantalla para confirmar estas acciones.
+- El formulario de Checkout (finalización de la compra) permite almacenar los datos del comprador en el LocalStorage para futuras compras. Los datos de la tarjeta de crédito se manejan solo en un estado dentro del componente y deberán ser ingresados cada vez que se realice una compra.
+- Es posible eliminar productos del carrito antes de finalizar la compra.
+- Los datos de la compra, excepto los datos de la tarjeta de crédito, se guardarán en la base de datos Firebase.
+- Se informará al cliente el número de pedido mediante una notificación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Otras características adicionales**
 
-### Analyzing the Bundle Size
+- La aplicación cuenta con un menú lateral (drawer) y un menú de accesos rápidos fijado en la parte inferior de la página, especialmente diseñado para dispositivos móviles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **DEMO FUNCIONAL**
 
-### Making a Progressive Web App
+Puedes ver una demo funcional del proyecto en el siguiente enlace:[](https://coderhouse-43185-react.vercel.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<https://coderhouse-43185-react.vercel.app/>
