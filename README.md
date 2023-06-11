@@ -1,6 +1,6 @@
 scale=1.0">
 
-# **Proyecto [Nombre del Proyecto]**
+# **Proyecto EXPLORA Ecommerce**
 
 Este proyecto es una aplicación web desarrollada con React que utiliza las siguientes librerías:
 
