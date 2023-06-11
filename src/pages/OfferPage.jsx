@@ -1,7 +1,9 @@
 import React from 'react';
-import {Container, Grid, Typography} from '@mui/material';
+import {Container, Grid} from '@mui/material';
 import CardProducts from '../components/Card/CardProducts';
 import useFilterProducts from '../hooks/useFilterProducts';
+
+import Loader from '../components/Loader/Loader';
 
 const OfferPage = () => {
   const offerProducts = useFilterProducts({property: 'oferta', value: true});
@@ -31,9 +33,7 @@ const OfferPage = () => {
             <CardProducts key={product.id} product={product} />
           ))
         ) : (
-          <Typography variant='body1'>
-            No hay productos en oferta en este momento.
-          </Typography>
+          <Loader />
         )}
       </Grid>
     </Container>

@@ -1,15 +1,13 @@
 import React from 'react';
-import {Box, CircularProgress, Container} from '@mui/material';
+import {Box, Container} from '@mui/material';
 import CardProducts from '../Card/CardProducts';
+import Loader from '../Loader/Loader';
 
 const ItemListContainerView = ({products, loading}) => {
   return (
     <Container maxWidth='xl' sx={{mt: 4}}>
       {loading ? (
-        <Box sx={{display: 'grid', justifyContent: 'center'}}>
-          <CircularProgress />
-          loading...
-        </Box>
+        <Loader />
       ) : (
         <Box
           sx={{
@@ -31,9 +29,7 @@ const ItemListContainerView = ({products, loading}) => {
               <CardProducts key={product.id} product={product} />
             ))
           ) : (
-            <Box sx={{display: 'grid', justifyContent: 'center'}}>
-              <CircularProgress />
-            </Box>
+            <Loader />
           )}
         </Box>
       )}

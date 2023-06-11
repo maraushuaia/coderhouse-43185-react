@@ -39,12 +39,11 @@ const ContextProducts = ({children}) => {
           id: productSnapshot.id,
         };
       } else {
-        console.log('No product found with ID:', productId);
+        // console.log('No product found with ID:', productId);
         return null;
       }
     } catch (error) {
-      // <ProductNoFound />;
-      console.error('Error fetching product:', error);
+      // console.error('Error fetching product:', error);
       return null;
     }
   };
