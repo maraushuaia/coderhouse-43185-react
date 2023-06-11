@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   Box,
   CircularProgress,
@@ -7,22 +7,46 @@ import {
   Typography,
 } from '@mui/material';
 import {useParams} from 'react-router-dom';
-import useSearchProductID from '../../hooks/useSearchProductID';
-import CardImages from '../Card/CardImages';
-import Counter from '../Counter/Counter';
-import CardRelatedProduct from '../Card/CardRelatedProduct';
 import {ProductContext} from '../../contexts/ContextProducts';
 import {ContextFavorites} from '../../contexts/ContextFavorites';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from '@mui/material/Button';
+import Carrusel from '../Carrusel/Carrusel';
+import CardImages from '../Card/CardImages';
+import Counter from '../Counter/Counter';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
-  const {product, loading, error} = useSearchProductID(id);
-  const {products} = useContext(ProductContext);
+  const {getProductById, products} = useContext(ProductContext);
   const {favorites, addFavorite, removeFavorite} = useContext(ContextFavorites);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const fetchedProduct = await getProductById(id);
+        if (fetchedProduct) {
+          setProduct(fetchedProduct);
+          setIsFavorite(
+            favorites.some((favorite) => favorite.id === fetchedProduct.id)
+          );
+        } else {
+          setError('Product not found');
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching product:', error);
+        setError('Error fetching product');
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id, getProductById, favorites]);
 
   const handleAddToFavorites = () => {
     addFavorite(product);
@@ -161,7 +185,7 @@ const ItemDetailContainer = () => {
               productData={product}
             />
             <Box mt={2} mx={3} display='flex' justifyContent='center'>
-              {favorites.some((favorite) => favorite.id === product.id) ? (
+              {isFavorite ? (
                 <Button size='small' onClick={handleRemoveFromFavorites}>
                   Quitar de mis Favoritos
                 </Button>
@@ -180,38 +204,16 @@ const ItemDetailContainer = () => {
           </Typography>
 
           <Container maxWidth='lg'>
-            <Grid container display='flex' justifyContent='left' mb={2}>
-              {relatedProducts.length > 0 ? (
-                relatedProducts.map((relatedProduct) => (
-                  <Grid
-                    item
-                    key={relatedProduct.id}
-                    xs={6}
-                    sm={4}
-                    md={3}
-                    lg={2}
-                    xl={2}
-                  >
-                    <CardRelatedProduct
-                      imgPrincipal={relatedProduct.imageMain}
-                      price={relatedProduct.price}
-                      extract={relatedProduct.descriptionShort}
-                      variant={relatedProduct.variant}
-                      stock={relatedProduct.stock}
-                      id={relatedProduct.id}
-                      oferta={relatedProduct.oferta}
-                    />
-                  </Grid>
-                ))
-              ) : (
-                <Grid item xs={12}>
-                  <Typography variant='body1'>
-                    Por el momento, no tenemos otros productos relacionados que
-                    mostrarte.
-                  </Typography>
-                </Grid>
-              )}
-            </Grid>
+            {relatedProducts.length > 0 ? (
+              <Carrusel listado={relatedProducts} />
+            ) : (
+              <Grid item xs={12}>
+                <Typography variant='body1'>
+                  Por el momento, no tenemos otros productos relacionados que
+                  mostrarte.
+                </Typography>
+              </Grid>
+            )}
           </Container>
         </Grid>
       </Box>

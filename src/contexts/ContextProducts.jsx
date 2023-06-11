@@ -1,6 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {db} from '../FirebaseConfig';
-import {collection, getDocs} from 'firebase/firestore';
+import {collection, getDocs, doc, getDoc} from 'firebase/firestore';
 
 const ProductContext = createContext();
 
@@ -28,9 +28,29 @@ const ContextProducts = ({children}) => {
     fetchProducts();
   }, []);
 
+  const getProductById = async (productId) => {
+    try {
+      const productDoc = doc(db, 'products', productId);
+      const productSnapshot = await getDoc(productDoc);
+      if (productSnapshot.exists()) {
+        return {
+          ...productSnapshot.data(),
+          id: productSnapshot.id,
+        };
+      } else {
+        console.log('No product found with ID:', productId);
+        return null;
+      }
+    } catch (error) {
+      console.error('Error fetching product:', error);
+      return null;
+    }
+  };
+
   const contextValue = {
     products,
     isLoading,
+    getProductById,
   };
 
   return (
