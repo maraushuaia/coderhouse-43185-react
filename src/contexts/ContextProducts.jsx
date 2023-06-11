@@ -1,6 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {db} from '../FirebaseConfig';
 import {collection, getDocs, doc, getDoc} from 'firebase/firestore';
+import ProductNoFound from '../components/Error/ProductNoFound';
 
 const ProductContext = createContext();
 
@@ -42,6 +43,7 @@ const ContextProducts = ({children}) => {
         return null;
       }
     } catch (error) {
+      // <ProductNoFound />;
       console.error('Error fetching product:', error);
       return null;
     }
