@@ -1,11 +1,9 @@
-import React, {useContext, useState, useRef, useEffect} from 'react';
-import {ProductContext} from '../../contexts/ContextProducts';
+import React, {useState, useRef, useEffect} from 'react';
 import CardProducts from '../../components/Card/CardProducts';
 import {Box, Grid, IconButton} from '@mui/material';
 import {ChevronLeft, ChevronRight} from '@mui/icons-material';
 
-const Carrusel = ({renderType, category, oferta}) => {
-  const {products} = useContext(ProductContext);
+const Carrusel = ({listado}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef(null);
   const [maxVisibleCards, setMaxVisibleCards] = useState(0);
@@ -14,12 +12,8 @@ const Carrusel = ({renderType, category, oferta}) => {
     const handleResize = () => {
       const containerWidth = containerRef.current.offsetWidth;
       const cardWidth = 280;
-      const maxVisibleCards = Math.floor(containerWidth / cardWidth);
-      const adjustedMaxVisibleCards = Math.min(
-        maxVisibleCards,
-        products.length
-      );
-      setMaxVisibleCards(adjustedMaxVisibleCards);
+      const newMaxVisibleCards = Math.floor(containerWidth / cardWidth);
+      setMaxVisibleCards(newMaxVisibleCards);
     };
 
     handleResize();
@@ -28,47 +22,17 @@ const Carrusel = ({renderType, category, oferta}) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [products.length]);
+  }, []);
 
   const handlePrevSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex === 0) {
-        return products.length - maxVisibleCards;
-      } else {
-        return prevIndex - 1;
-      }
-    });
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   const handleNextSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      const lastIndex = products.length - maxVisibleCards;
-      const nextIndex = prevIndex + 1;
-      return nextIndex > lastIndex ? 0 : nextIndex;
-    });
+    setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
-  const renderCards = () => {
-    let visibleCards = [];
-
-    if (renderType === 'category') {
-      visibleCards = products.filter(
-        (product) => product.category === category
-      );
-    } else if (renderType === 'oferta') {
-      visibleCards = products.filter((product) => product.oferta === oferta);
-    }
-
-    return visibleCards
-      .slice(currentIndex, currentIndex + maxVisibleCards)
-      .map((product) => (
-        <Grid item key={product.id} marginRight={2}>
-          <CardProducts product={product} />
-        </Grid>
-      ));
-  };
-
-  const isLastCardVisible = currentIndex + maxVisibleCards >= products.length;
+  const isLastCardVisible = currentIndex + maxVisibleCards >= listado.length;
 
   return (
     <Box position='relative' marginBottom={2} overflow='hidden' px={3}>
@@ -80,7 +44,13 @@ const Carrusel = ({renderType, category, oferta}) => {
           wrap='nowrap'
           my={3}
         >
-          {renderCards()}
+          {listado
+            .slice(currentIndex, currentIndex + maxVisibleCards)
+            .map((product) => (
+              <Grid item key={product.id} marginRight={2}>
+                <CardProducts key={product.id} product={product} />
+              </Grid>
+            ))}
         </Grid>
       </Box>
       <IconButton

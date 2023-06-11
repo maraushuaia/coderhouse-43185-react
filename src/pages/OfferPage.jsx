@@ -1,17 +1,10 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React from 'react';
 import {Container, Grid, Typography} from '@mui/material';
-import {ProductContext} from '../contexts/ContextProducts';
 import CardProducts from '../components/Card/CardProducts';
+import useFilterProducts from '../hooks/useFilterProducts';
 
 const OfferPage = () => {
-  const {products} = useContext(ProductContext);
-
-  const [offerProducts, setOfferProducts] = useState([]);
-
-  useEffect(() => {
-    const filteredProducts = products.filter((product) => product.oferta);
-    setOfferProducts(filteredProducts);
-  }, [products]);
+  const offerProducts = useFilterProducts({property: 'oferta', value: true});
 
   return (
     <Container maxWidth='xl' sx={{mt: 4, minHeight: '80vh'}}>
