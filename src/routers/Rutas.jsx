@@ -21,6 +21,7 @@ import CheckoutPage from '../pages/CheckoutPage';
 import LoginPage from '../pages/LoginPage';
 import MorePage from '../pages/MorePage';
 import ScrollToTop from '../helpers/ScrollToTop';
+import CheckoutForm from '../components/Forms/CheckoutForm';
 
 const Rutas = () => {
   return (
@@ -39,6 +40,7 @@ const Rutas = () => {
                 <Route path='/notificaciones' element={<NotificationsPage />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<CheckoutPage />} />
+                <Route path='/confirm' element={<CheckoutForm />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/more' element={<MorePage />} />
                 <Route

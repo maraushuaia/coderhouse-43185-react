@@ -247,8 +247,8 @@ import Button from '@mui/material/Button';
 import Carrusel from '../Carrusel/Carrusel';
 import CardImages from '../Card/CardImages';
 import Counter from '../Counter/Counter';
-import {CirclesWithBar} from 'react-loader-spinner';
 import ErrorNoFound from '../Error/ProductNoFound';
+import Loader from '../Loader/Loader';
 
 const ItemDetailContainer = () => {
   const {id} = useParams();
@@ -309,16 +309,7 @@ const ItemDetailContainer = () => {
   };
 
   if (loading) {
-    return (
-      <Box sx={{display: 'grid', justifyContent: 'center'}}>
-        <CirclesWithBar
-          height={100}
-          width={100}
-          color='#bb86fc'
-          ariaLabel='circles-with-bar-loading'
-        />
-      </Box>
-    );
+    return <Loader />;
   }
 
   if (!product) {

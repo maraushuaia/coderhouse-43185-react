@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Paper from '@mui/material/Paper';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -12,6 +12,11 @@ import AddressForm from '../components/Forms/AddressForm';
 import PaymentForm from '../components/Forms/PaymentForm';
 import ReviewForm from '../components/Forms/ReviewForm';
 import ValidateForm from '../helpers/ValidateForm';
+import {addDoc, collection} from 'firebase/firestore';
+import {db} from '../FirebaseConfig';
+import {CartContext} from '../contexts/ContextCartWidget';
+import CheckoutForm from '../components/Forms/CheckoutForm';
+import ErrorInfo from '../components/Error/ErrorInfo';
 
 const steps = ['Envío', 'Pago', 'Confirmación'];
 
@@ -20,6 +25,9 @@ const CheckoutPage = () => {
   const [shippingAddress, setShippingAddress] = useState({});
   const [paymentData, setPaymentData] = useState({});
   const [valid, setValid] = useState(true); // Estado para controlar la validez del formulario actual
+  const [numberOrder, setNumberOrder] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const {getTotalPrice, clearCart} = useContext(CartContext);
 
   useEffect(() => {
     // Recuperar los datos del envío almacenados en localStorage
@@ -41,6 +49,7 @@ const CheckoutPage = () => {
       }
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setValid(false);
+      console.log('Presioné el botón de siguiente');
     } else {
       toast.error('Completa todos los campos requeridos antes de continuar');
     }
@@ -121,6 +130,37 @@ const CheckoutPage = () => {
     }
   };
 
+  const cart = JSON.parse(localStorage.getItem('cartProducts')) || [];
+
+  const totalCompra = getTotalPrice();
+
+  const order = {
+    items: cart,
+    comprador: shippingAddress,
+    totalCompra,
+    date: new Date(),
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+
+    if (cart.length > 0) {
+      const orderCollection = collection(db, 'orders');
+
+      addDoc(orderCollection, order)
+        .then((docRef) => {
+          setNumberOrder(docRef.id);
+          clearCart();
+        })
+        .catch((error) => {
+          <ErrorInfo />;
+          console.error('Error adding document: ', error);
+        });
+    }
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
   return (
     <Grid
       container
@@ -162,14 +202,7 @@ const CheckoutPage = () => {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant='h5' gutterBottom pt={2}>
-                  Gracias por su compra.
-                </Typography>
-                <Typography variant='subtitle1'>
-                  Su número de pedido es #2001539. Le hemos enviado por correo
-                  electrónico confirmación del pedido, y le enviaremos una
-                  actualización cuando su pedido sea enviado.
-                </Typography>
+                <CheckoutForm idOrder={numberOrder} />
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -189,15 +222,23 @@ const CheckoutPage = () => {
                   )}
 
                   <Grid item mr={2}>
-                    <Button
-                      variant='contained'
-                      color='secondary'
-                      onClick={handleNext}
-                    >
-                      {activeStep === steps.length - 1
-                        ? 'Realizar Pedido'
-                        : 'Siguiente'}
-                    </Button>
+                    {activeStep === steps.length - 1 ? (
+                      <Button
+                        variant='contained'
+                        color='secondary'
+                        onClick={handleSubmit}
+                      >
+                        Realizar Pedido
+                      </Button>
+                    ) : (
+                      <Button
+                        variant='contained'
+                        color='secondary'
+                        onClick={handleNext}
+                      >
+                        Siguiente
+                      </Button>
+                    )}
                   </Grid>
                 </Grid>
               </React.Fragment>
