@@ -163,6 +163,7 @@ const CheckoutPage = () => {
 
   return (
     <Grid
+      display={'flex'}
       container
       spacing={0}
       justifyContent='center'
